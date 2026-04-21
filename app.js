@@ -145,6 +145,20 @@ function createTeamsFromPlayers(players, teamSize) {
   return createdTeams;
 }
 
+function validateTeamSetup(players, teamSize) {
+  if (!players.length || !teamSize) {
+    return "Add players and a valid team size first.";
+  }
+
+  const projectedTeamCount = Math.ceil(players.length / teamSize);
+
+  if (projectedTeamCount < 2) {
+    return "Use enough players or a smaller team size so the quiz has at least 2 teams.";
+  }
+
+  return "";
+}
+
 function syncAllQuestionTitles() {
   [...elements.questionList.querySelectorAll(".question-editor")].forEach(
     (editor, index) => {
@@ -167,6 +181,7 @@ function addQuestionEditor(question = { prompt: "", hint: "", answer: "" }) {
 
   removeButton.addEventListener("click", () => {
     editor.remove();
+    ensureAtLeastOneQuestionEditor();
     syncAllQuestionTitles();
     persistSetupDraft();
   });
@@ -181,6 +196,12 @@ function addQuestionEditor(question = { prompt: "", hint: "", answer: "" }) {
 
   elements.questionList.appendChild(fragment);
   syncAllQuestionTitles();
+}
+
+function ensureAtLeastOneQuestionEditor() {
+  if (!elements.questionList.querySelector(".question-editor")) {
+    addQuestionEditor();
+  }
 }
 
 function replaceQuestionEditors(questions) {
@@ -361,6 +382,15 @@ function isQuizComplete() {
   return Boolean(state.logs[0] && state.logs[0].message === "Quiz finished.");
 }
 
+function scrollGameIntoView(smooth = false) {
+  const topTarget = Math.max((elements.gamePanel?.offsetTop || 0) - 12, 0);
+
+  window.scrollTo({
+    top: topTarget,
+    behavior: smooth ? "smooth" : "auto",
+  });
+}
+
 function getWinningTeams() {
   if (!state.teams.length) {
     return [];
@@ -372,6 +402,14 @@ function getWinningTeams() {
 
 function startGame() {
   state.questions = readQuestionsFromEditors();
+  const players = parsePlayers();
+  const teamSize = Number(elements.teamSize.value);
+  const teamSetupError = validateTeamSetup(players, teamSize);
+
+  if (teamSetupError) {
+    elements.setupMessage.textContent = teamSetupError;
+    return;
+  }
 
   if (!state.teams.length) {
     elements.setupMessage.textContent = "Create teams before starting the quiz.";
@@ -393,6 +431,7 @@ function startGame() {
   initializeGame();
   logEvent(`Quiz started. ${state.teams[state.game.currentTeamIndex].name} begins.`);
   render();
+  requestAnimationFrame(() => scrollGameIntoView());
 }
 
 function nextTeamIndex(index) {
@@ -479,6 +518,7 @@ function advanceToNextQuestion() {
   logEvent(`${startingTeam.name} will start question ${nextQuestionNumber}.`);
   render();
   saveState();
+  requestAnimationFrame(() => scrollGameIntoView());
 }
 
 function revealHintNow() {
@@ -510,6 +550,7 @@ function resetGame() {
   state.game = null;
   elements.playerNames.value = "";
   elements.teamSize.value = 2;
+  elements.quizFileInput.value = "";
   elements.setupMessage.textContent = "";
   replaceQuestionEditors([]);
   updateFileStatus();
@@ -552,13 +593,12 @@ function renderTurnOrder() {
     return;
   }
 
+  const leaderScore = Math.max(...state.teams.map((entry) => entry.score));
+
   state.teams.forEach((team, index) => {
     const chip = document.createElement("article");
     const isActive = state.stage === "game" && state.game && index === state.game.currentTeamIndex;
-    const isLeader =
-      state.teams.length > 0 &&
-      team.score === Math.max(...state.teams.map((entry) => entry.score)) &&
-      team.score > 0;
+    const isLeader = team.score === leaderScore && team.score > 0;
 
     chip.className = `turn-chip${isActive ? " active" : ""}${isLeader ? " leader" : ""}`;
     chip.innerHTML = `
@@ -703,6 +743,7 @@ function renderSetup() {
 function render() {
   const inGame = state.stage === "game";
 
+  document.body.classList.toggle("game-mode", inGame);
   elements.setupPanel.classList.toggle("hidden", inGame);
   elements.gamePanel.classList.toggle("hidden", !inGame);
   elements.gamePhasePill.textContent = inGame ? "Live game" : "Setup";
@@ -724,9 +765,10 @@ function render() {
 elements.generateTeamsBtn.addEventListener("click", () => {
   const players = parsePlayers();
   const teamSize = Number(elements.teamSize.value);
+  const validationMessage = validateTeamSetup(players, teamSize);
 
-  if (!players.length || !teamSize) {
-    elements.setupMessage.textContent = "Add players and a valid team size first.";
+  if (validationMessage) {
+    elements.setupMessage.textContent = validationMessage;
     return;
   }
 
