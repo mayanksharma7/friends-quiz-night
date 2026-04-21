@@ -146,6 +146,23 @@ Important limitation:
 
 Open [index.html](/Users/maykum02/Documents/Personal/Codes/Quiz/index.html) in any modern browser.
 
+## GitHub Pages hosting
+
+This repo is set up with a GitHub Actions workflow for GitHub Pages deployment:
+- [.github/workflows/deploy-pages.yml](/Users/maykum02/Documents/Personal/Codes/Quiz/.github/workflows/deploy-pages.yml)
+
+Expected project site URL for this repository:
+- `https://mayanksharma7.github.io/friends-quiz-night/`
+
+To enable it on GitHub:
+1. Push this repository to GitHub.
+2. Open the repository on GitHub.
+3. Go to `Settings` -> `Pages`.
+4. Under the build and deployment source, choose `GitHub Actions`.
+5. Push to `main` again if needed, or run the workflow manually from the `Actions` tab.
+
+After that, every push to `main` should redeploy the site automatically.
+
 ## How to use
 
 1. Open the website.
