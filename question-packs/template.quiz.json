@@ -1,0 +1,17 @@
+{
+  "id": "replace-with-topic-slug",
+  "title": "Replace With Quiz Title",
+  "description": "One-line description of the quiz topic and style.",
+  "questions": [
+    {
+      "prompt": "Write the quiz question here?",
+      "hint": "Write a short helpful hint here.",
+      "answer": "Write the final correct answer here"
+    },
+    {
+      "prompt": "Add the second question here?",
+      "hint": "Add a hint here.",
+      "answer": "Add the answer here"
+    }
+  ]
+}

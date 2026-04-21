@@ -1,0 +1,257 @@
+{
+  "id": "famous-places-of-india",
+  "title": "Famous Places of India",
+  "description": "A travel and landmarks round featuring monuments, cities, rivers, temples, and iconic destinations across India.",
+  "questions": [
+    {
+      "prompt": "In which city is the Taj Mahal located?",
+      "hint": "It is in Uttar Pradesh.",
+      "answer": "Agra"
+    },
+    {
+      "prompt": "Which monument in Delhi was commissioned by Qutb-ud-din Aibak?",
+      "hint": "It is a tall minaret and a UNESCO site.",
+      "answer": "Qutub Minar"
+    },
+    {
+      "prompt": "Which temple in Odisha is famously shaped like a chariot?",
+      "hint": "It is dedicated to the Sun God.",
+      "answer": "Konark Sun Temple"
+    },
+    {
+      "prompt": "Which city is known as the City of Lakes in Rajasthan?",
+      "hint": "It is a popular wedding destination.",
+      "answer": "Udaipur"
+    },
+    {
+      "prompt": "Which fort in Rajasthan is associated with the city of Jaipur?",
+      "hint": "It is built with yellow and pink sandstone.",
+      "answer": "Amber Fort"
+    },
+    {
+      "prompt": "Which river is considered the holiest by many Hindus?",
+      "hint": "It flows through Varanasi.",
+      "answer": "Ganga"
+    },
+    {
+      "prompt": "Which city is known as the Queen of the Hills in West Bengal?",
+      "hint": "It is famous for tea gardens and toy train rides.",
+      "answer": "Darjeeling"
+    },
+    {
+      "prompt": "Which famous gate in Mumbai overlooks the Arabian Sea?",
+      "hint": "It was built to commemorate the visit of King George V.",
+      "answer": "Gateway of India"
+    },
+    {
+      "prompt": "Which monument in Hyderabad has four minarets?",
+      "hint": "It is one of the city's most famous landmarks.",
+      "answer": "Charminar"
+    },
+    {
+      "prompt": "In which state would you find the backwaters of Alleppey?",
+      "hint": "It is famous for houseboats.",
+      "answer": "Kerala"
+    },
+    {
+      "prompt": "Which palace in Mysuru is illuminated during Dussehra celebrations?",
+      "hint": "It is one of Karnataka's most famous attractions.",
+      "answer": "Mysore Palace"
+    },
+    {
+      "prompt": "Which national park in Assam is famous for the one-horned rhinoceros?",
+      "hint": "It is a UNESCO World Heritage Site.",
+      "answer": "Kaziranga National Park"
+    },
+    {
+      "prompt": "Which lake city is the summer capital of Jammu and Kashmir and famous for Dal Lake?",
+      "hint": "Its name starts with S.",
+      "answer": "Srinagar"
+    },
+    {
+      "prompt": "Which temple town in Tamil Nadu is famous for the Meenakshi Amman Temple?",
+      "hint": "Its name starts with M.",
+      "answer": "Madurai"
+    },
+    {
+      "prompt": "Which hill station in Himachal Pradesh is famous for the Mall Road and Jakhoo Temple?",
+      "hint": "It was once the summer capital of British India.",
+      "answer": "Shimla"
+    },
+    {
+      "prompt": "Which caves in Maharashtra are famous for ancient Buddhist paintings?",
+      "hint": "Their name starts with A.",
+      "answer": "Ajanta Caves"
+    },
+    {
+      "prompt": "Which desert covers much of western Rajasthan?",
+      "hint": "Its name starts with T.",
+      "answer": "Thar Desert"
+    },
+    {
+      "prompt": "Which city in Punjab is home to the Golden Temple?",
+      "hint": "It shares its name with the temple district.",
+      "answer": "Amritsar"
+    },
+    {
+      "prompt": "Which island monument near Mumbai is famous for rock-cut caves dedicated to Shiva?",
+      "hint": "Its name starts with E.",
+      "answer": "Elephanta Caves"
+    },
+    {
+      "prompt": "Which city in Uttar Pradesh is famous for the ghats and the Kashi Vishwanath Temple?",
+      "hint": "It is one of the oldest living cities in the world.",
+      "answer": "Varanasi"
+    },
+    {
+      "prompt": "Which beach destination in Goa is famous for its nightlife and starts with B?",
+      "hint": "It is one of Goa's most well-known beaches.",
+      "answer": "Baga Beach"
+    },
+    {
+      "prompt": "Which monument in New Delhi is a war memorial shaped like a triumphal arch?",
+      "hint": "It is on the Rajpath area.",
+      "answer": "India Gate"
+    },
+    {
+      "prompt": "Which massive fort in Delhi was built by Shah Jahan and hosts the Independence Day flag hoisting?",
+      "hint": "Its name is a color.",
+      "answer": "Red Fort"
+    },
+    {
+      "prompt": "Which temple in Amritsar is the holiest shrine of Sikhism?",
+      "hint": "Its popular name refers to its appearance.",
+      "answer": "Golden Temple"
+    },
+    {
+      "prompt": "Which ancient rock-cut cave complex in Maharashtra is famous for Hindu, Buddhist, and Jain monuments and starts with E?",
+      "hint": "It shares its name with a famous island cave site near Mumbai but is not the same.",
+      "answer": "Ellora Caves"
+    },
+    {
+      "prompt": "Which city in Karnataka is called the Garden City of India?",
+      "hint": "It is also the state's capital.",
+      "answer": "Bengaluru"
+    },
+    {
+      "prompt": "Which city in Rajasthan is known as the Blue City?",
+      "hint": "Mehrangarh Fort is there.",
+      "answer": "Jodhpur"
+    },
+    {
+      "prompt": "Which temple in Jammu is famous for the pilgrimage to Mata Vaishno Devi?",
+      "hint": "It is in the Trikuta hills.",
+      "answer": "Vaishno Devi Temple"
+    },
+    {
+      "prompt": "Which palace complex in Rajasthan is located in Udaipur and overlooks Lake Pichola?",
+      "hint": "It is called the City what.",
+      "answer": "City Palace"
+    },
+    {
+      "prompt": "Which bridge in Kolkata is an iconic cantilever bridge over the Hooghly River?",
+      "hint": "It shares its name with a station area.",
+      "answer": "Howrah Bridge"
+    },
+    {
+      "prompt": "Which beach in Odisha is famous for the annual sand art festival and nearby Jagannath pilgrimage city?",
+      "hint": "It is in Puri.",
+      "answer": "Puri Beach"
+    },
+    {
+      "prompt": "Which temple town in Odisha is famous for the Jagannath Temple?",
+      "hint": "It starts with P.",
+      "answer": "Puri"
+    },
+    {
+      "prompt": "Which famous stepwell in Gujarat is a UNESCO site and named after a queen?",
+      "hint": "It begins with Rani.",
+      "answer": "Rani ki Vav"
+    },
+    {
+      "prompt": "Which temple complex in Tamil Nadu is associated with Ramanathaswamy and is on an island town?",
+      "hint": "It is part of the Char Dham pilgrimage.",
+      "answer": "Rameswaram"
+    },
+    {
+      "prompt": "Which monastery region in Ladakh is famous for Pangong Lake nearby and high-altitude landscapes?",
+      "hint": "Its name starts with L.",
+      "answer": "Ladakh"
+    },
+    {
+      "prompt": "Which Kerala hill station is famous for tea gardens and often called the Kashmir of South India?",
+      "hint": "Its name starts with M.",
+      "answer": "Munnar"
+    },
+    {
+      "prompt": "Which city in Bihar is associated with the Mahabodhi Temple where Buddha attained enlightenment?",
+      "hint": "Its name begins with Bodh.",
+      "answer": "Bodh Gaya"
+    },
+    {
+      "prompt": "Which fort in Maharashtra was the capital fort of Chhatrapati Shivaji Maharaj?",
+      "hint": "His coronation took place there.",
+      "answer": "Raigad Fort"
+    },
+    {
+      "prompt": "Which pilgrimage city in Uttarakhand is famous for Har Ki Pauri?",
+      "hint": "The Kumbh Mela is held there.",
+      "answer": "Haridwar"
+    },
+    {
+      "prompt": "Which Himalayan region in Himachal Pradesh is famous for Rohtang Pass and Solang Valley?",
+      "hint": "Its name starts with M.",
+      "answer": "Manali"
+    },
+    {
+      "prompt": "Which city in Madhya Pradesh is famous for the Khajuraho Group of Monuments nearby?",
+      "hint": "Its name starts with K.",
+      "answer": "Khajuraho"
+    },
+    {
+      "prompt": "Which city in Rajasthan is called the Golden City because of its yellow sandstone architecture?",
+      "hint": "It has a famous fort in the desert.",
+      "answer": "Jaisalmer"
+    },
+    {
+      "prompt": "Which temple in Andhra Pradesh is one of the richest pilgrimage sites in the world and dedicated to Lord Venkateswara?",
+      "hint": "It is in Tirumala hills.",
+      "answer": "Tirupati Temple"
+    },
+    {
+      "prompt": "Which city in Kerala is known as the Queen of the Arabian Sea?",
+      "hint": "It has Chinese fishing nets.",
+      "answer": "Kochi"
+    },
+    {
+      "prompt": "Which famous bird sanctuary in Rajasthan is a UNESCO site formerly called Bharatpur Bird Sanctuary?",
+      "hint": "Its current name begins with Keoladeo.",
+      "answer": "Keoladeo National Park"
+    },
+    {
+      "prompt": "Which city in Tamil Nadu is famous for the Brihadeeswarar Temple?",
+      "hint": "It was a Chola capital.",
+      "answer": "Thanjavur"
+    },
+    {
+      "prompt": "Which riverfront city in Gujarat is known for Sabarmati Ashram?",
+      "hint": "It hosted a famous cricket stadium too.",
+      "answer": "Ahmedabad"
+    },
+    {
+      "prompt": "Which cave shrine in Jammu and Kashmir is dedicated to Shiva and famous for an ice stalagmite?",
+      "hint": "Its name starts with A.",
+      "answer": "Amarnath Cave"
+    },
+    {
+      "prompt": "Which northeastern state is home to Tawang Monastery?",
+      "hint": "Its capital is Itanagar.",
+      "answer": "Arunachal Pradesh"
+    },
+    {
+      "prompt": "Which city in Maharashtra is famous for the rock-cut Buddhist chaitya halls of Karla and Bhaja nearby and is a hill getaway from Mumbai?",
+      "hint": "Its name starts with L.",
+      "answer": "Lonavala"
+    }
+  ]
+}

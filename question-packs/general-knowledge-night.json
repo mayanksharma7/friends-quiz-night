@@ -1,0 +1,37 @@
+{
+  "id": "general-knowledge-night",
+  "title": "General Knowledge Night",
+  "description": "A mixed warm-up round covering science, history, music, and sport.",
+  "questions": [
+    {
+      "prompt": "Which planet in our solar system is known as the Red Planet?",
+      "hint": "Its name comes from the Roman god of war.",
+      "answer": "Mars"
+    },
+    {
+      "prompt": "Which instrument has 88 keys?",
+      "hint": "It can be upright or grand.",
+      "answer": "Piano"
+    },
+    {
+      "prompt": "In which sport would you perform a slam dunk?",
+      "hint": "It is played with a hoop and backboard.",
+      "answer": "Basketball"
+    },
+    {
+      "prompt": "Who painted the Mona Lisa?",
+      "hint": "He was also an inventor and scientist.",
+      "answer": "Leonardo da Vinci"
+    },
+    {
+      "prompt": "What gas do plants absorb from the atmosphere?",
+      "hint": "Humans breathe it out.",
+      "answer": "Carbon dioxide"
+    },
+    {
+      "prompt": "Which ocean lies between Africa, Asia, and Australia?",
+      "hint": "Its name begins with I.",
+      "answer": "Indian Ocean"
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Friends Quiz Night</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy-block">
+          <p class="eyebrow">Quizmaster Console</p>
+          <h1>Friends Quiz Night</h1>
+          <p class="hero-copy">
+            Build teams, load a quiz from a file, and run the whole game from one
+            shared screen.
+          </p>
+          <div class="hero-tags">
+            <span>Single-screen host</span>
+            <span>JSON quiz files</span>
+            <span>Live leaderboard</span>
+          </div>
+        </div>
+        <div class="hero-side">
+          <div class="hero-badge">
+          <span id="gamePhasePill">Setup</span>
+          </div>
+          <div class="hero-card">
+            <strong>Simple loading</strong>
+            <p>Pick any quiz JSON file directly from your computer before the game starts.</p>
+          </div>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="panel panel-setup" id="setupPanel">
+          <div class="panel-heading">
+            <div>
+              <p class="section-kicker">1. Setup the room</p>
+              <h2>Players, teams, and questions</h2>
+            </div>
+            <p class="setup-note">One quizmaster controls the whole room from this screen.</p>
+          </div>
+
+          <div class="setup-grid">
+            <article class="card">
+              <h3>Players</h3>
+              <label class="field-label" for="playerNames">
+                Enter one player name per line
+              </label>
+              <textarea
+                id="playerNames"
+                rows="10"
+                placeholder="Amit&#10;Minu&#10;Ashok&#10;Akhil"
+              ></textarea>
+
+              <label class="field-label" for="teamSize">
+                Players per team
+              </label>
+              <input id="teamSize" type="number" min="1" value="2" />
+
+              <button class="primary-button" id="generateTeamsBtn" type="button">
+                Shuffle teams
+              </button>
+            </article>
+
+            <article class="card">
+              <div class="card-header">
+                <h3>Teams</h3>
+                <p>Quizmaster can rename teams before the game starts.</p>
+              </div>
+              <div id="teamPreview" class="team-preview empty-state">
+                Generate teams to start.
+              </div>
+            </article>
+          </div>
+
+          <article class="card">
+            <div class="panel-heading compact">
+              <div>
+                <p class="section-kicker">2. Load quiz file</p>
+                <h2>Quiz source</h2>
+              </div>
+            </div>
+
+            <div class="file-loader-card">
+              <label class="file-picker" for="quizFileInput">
+                <span class="file-picker-title">Choose quiz file</span>
+                <span class="file-picker-subtitle">Load a `.json` file with title, description, and questions.</span>
+              </label>
+              <input id="quizFileInput" type="file" accept=".json,application/json" />
+              <div class="file-loader-actions">
+                <button class="primary-button" id="loadFileBtn" type="button">
+                  Load file
+                </button>
+                <button class="ghost-button" id="clearQuestionsBtn" type="button">
+                  Clear bank
+                </button>
+              </div>
+            </div>
+            <p id="fileStatus" class="status-text">
+              Use any quiz JSON file. Sample files already exist in the `question-packs` folder.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="panel-heading compact">
+              <div>
+                <p class="section-kicker">3. Prepare the quiz</p>
+                <h2>Question bank</h2>
+              </div>
+              <button class="ghost-button" id="addQuestionBtn" type="button">
+                Add question
+              </button>
+            </div>
+            <div id="questionList" class="question-list"></div>
+          </article>
+
+          <div class="setup-actions">
+            <button class="primary-button large" id="startGameBtn" type="button">
+              Start quiz
+            </button>
+            <p id="setupMessage" class="status-text"></p>
+          </div>
+        </section>
+
+        <section class="panel hidden" id="gamePanel">
+          <section class="winner-banner hidden" id="winnerBanner">
+            <p class="winner-kicker">Quiz Complete</p>
+            <h2 id="winnerTitle">Winner</h2>
+            <p id="winnerSubtitle">Final scores are in.</p>
+          </section>
+
+          <div class="game-grid">
+            <article class="card live-card">
+              <div class="panel-heading compact">
+                <div>
+                  <p class="section-kicker">Live round</p>
+                  <h2 id="questionNumberLabel">Question 1</h2>
+                </div>
+                <button class="ghost-button" id="resetGameBtn" type="button">
+                  Reset game
+                </button>
+              </div>
+
+              <div class="score-ribbon">
+                <div>
+                  <span>Current team</span>
+                  <strong id="currentTeamName">-</strong>
+                </div>
+                <div>
+                  <span>Round</span>
+                  <strong id="roundLabel">1</strong>
+                </div>
+                <div>
+                  <span>Points in play</span>
+                  <strong id="pointsInPlay">10</strong>
+                </div>
+              </div>
+
+              <div class="question-card">
+                <p class="prompt-label">Question</p>
+                <h3 id="questionPrompt">-</h3>
+                <div class="hint-box" id="hintBox">
+                  <p class="prompt-label">Hint</p>
+                  <p id="questionHint">-</p>
+                </div>
+                <div class="answer-box" id="answerBox">
+                  <p class="prompt-label">Answer</p>
+                  <p id="questionAnswer">-</p>
+                </div>
+              </div>
+
+              <div class="controls-grid">
+                <button class="primary-button" id="correctBtn" type="button">
+                  Mark correct
+                </button>
+                <button class="secondary-button" id="incorrectBtn" type="button">
+                  Mark incorrect
+                </button>
+                <button class="ghost-button" id="passBtn" type="button">
+                  Team passed
+                </button>
+                <button class="ghost-button" id="revealHintBtn" type="button">
+                  Reveal hint now
+                </button>
+                <button class="primary-button hidden" id="nextQuestionBtn" type="button">
+                  Next question
+                </button>
+              </div>
+              <p class="shortcut-note">
+                Shortcuts:
+                <span>`C` correct</span>
+                <span>`W` wrong</span>
+                <span>`P` pass</span>
+                <span>`H` hint</span>
+                <span>`N` next</span>
+              </p>
+
+              <div class="turn-status">
+                <p id="turnMessage"></p>
+              </div>
+            </article>
+
+            <aside class="sidebar">
+              <article class="card">
+                <h3>Leaderboard</h3>
+                <div id="leaderboard" class="leaderboard"></div>
+              </article>
+
+              <article class="card">
+                <h3>Round tracker</h3>
+                <div id="turnOrder" class="turn-order"></div>
+              </article>
+
+              <article class="card">
+                <h3>Game log</h3>
+                <div id="eventLog" class="event-log"></div>
+              </article>
+            </aside>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <template id="questionTemplate">
+      <article class="question-editor">
+        <div class="question-editor-head">
+          <h3 class="question-title">Question</h3>
+          <button class="remove-link" type="button">Remove</button>
+        </div>
+        <label class="field-label">Question text</label>
+        <textarea class="question-input question-prompt" rows="3"></textarea>
+        <label class="field-label">Hint</label>
+        <input class="question-input question-hint" type="text" />
+        <label class="field-label">Answer</label>
+        <input class="question-input question-answer" type="text" />
+      </article>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

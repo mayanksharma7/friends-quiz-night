@@ -1,0 +1,257 @@
+{
+  "id": "indian-cinema-and-bollywood",
+  "title": "Indian Cinema and Bollywood",
+  "description": "A film round with famous actors, films, directors, songs, and iconic moments from Indian cinema.",
+  "questions": [
+    {
+      "prompt": "Who directed the film Lagaan?",
+      "hint": "He also directed Swades and Jodhaa Akbar.",
+      "answer": "Ashutosh Gowariker"
+    },
+    {
+      "prompt": "Which actor played the title role in the film PK?",
+      "hint": "He is often called Mr. Perfectionist.",
+      "answer": "Aamir Khan"
+    },
+    {
+      "prompt": "Who played the role of Geet in Jab We Met?",
+      "hint": "She belongs to the Kapoor family.",
+      "answer": "Kareena Kapoor"
+    },
+    {
+      "prompt": "Which film features the characters Rahul, Anjali, and Tina?",
+      "hint": "Its title is also a famous line meaning 'something happens.'",
+      "answer": "Kuch Kuch Hota Hai"
+    },
+    {
+      "prompt": "Who directed Dilwale Dulhania Le Jayenge?",
+      "hint": "He is the son of Yash Chopra.",
+      "answer": "Aditya Chopra"
+    },
+    {
+      "prompt": "Which actor is known as the Badshah of Bollywood?",
+      "hint": "His initials are S. R. K.",
+      "answer": "Shah Rukh Khan"
+    },
+    {
+      "prompt": "In which film did Amitabh Bachchan play the character Vijay Dinanath Chauhan?",
+      "hint": "Its title means 'path of fire.'",
+      "answer": "Agneepath"
+    },
+    {
+      "prompt": "Who composed the music for Roja?",
+      "hint": "He later won Oscars for Slumdog Millionaire.",
+      "answer": "A. R. Rahman"
+    },
+    {
+      "prompt": "Which 1975 film is famous for the characters Jai and Veeru?",
+      "hint": "It also featured Gabbar Singh.",
+      "answer": "Sholay"
+    },
+    {
+      "prompt": "Who played the role of Queen Padmini in Padmaavat?",
+      "hint": "She was also in Chennai Express and Piku.",
+      "answer": "Deepika Padukone"
+    },
+    {
+      "prompt": "Which sports film starred Shah Rukh Khan as Kabir Khan?",
+      "hint": "It ends with the chant '70 minute.'",
+      "answer": "Chak De! India"
+    },
+    {
+      "prompt": "Which actor played Ranchoddas 'Rancho' in 3 Idiots?",
+      "hint": "He is also one of the producers of Taare Zameen Par.",
+      "answer": "Aamir Khan"
+    },
+    {
+      "prompt": "Who directed Mughal-e-Azam?",
+      "hint": "His initials are K. A.",
+      "answer": "K. Asif"
+    },
+    {
+      "prompt": "Which actress is known for the song 'Ek Do Teen' from Tezaab?",
+      "hint": "She is often called the Dhak Dhak girl.",
+      "answer": "Madhuri Dixit"
+    },
+    {
+      "prompt": "Which film won the Academy Award for Best Original Song with 'Naatu Naatu'?",
+      "hint": "It was directed by S. S. Rajamouli.",
+      "answer": "RRR"
+    },
+    {
+      "prompt": "Who played the lead in Bhaag Milkha Bhaag?",
+      "hint": "His first name is Farhan.",
+      "answer": "Farhan Akhtar"
+    },
+    {
+      "prompt": "Which film starred Vidya Balan as a pregnant woman searching for her husband in Kolkata?",
+      "hint": "Its title means 'story.'",
+      "answer": "Kahaani"
+    },
+    {
+      "prompt": "Who directed the film Pather Panchali?",
+      "hint": "He is one of India's greatest filmmakers from Bengal.",
+      "answer": "Satyajit Ray"
+    },
+    {
+      "prompt": "Which actor played Sultan in the film Sultan?",
+      "hint": "He is also called Bhaijaan by fans.",
+      "answer": "Salman Khan"
+    },
+    {
+      "prompt": "In which movie did Ranbir Kapoor play the character Jordan?",
+      "hint": "It was directed by Imtiaz Ali.",
+      "answer": "Rockstar"
+    },
+    {
+      "prompt": "Which 2001 film was India's official submission to the Oscars and set in a village facing a cricket challenge?",
+      "hint": "It starred Aamir Khan.",
+      "answer": "Lagaan"
+    },
+    {
+      "prompt": "Who was the female lead opposite Shah Rukh Khan in Chennai Express?",
+      "hint": "She played Meenamma.",
+      "answer": "Deepika Padukone"
+    },
+    {
+      "prompt": "Which film is based on the life of wrestler Mahavir Singh Phogat's daughters?",
+      "hint": "Its title means 'wrestling match.'",
+      "answer": "Dangal"
+    },
+    {
+      "prompt": "Who sang the song 'Kal Ho Naa Ho' in the title track version?",
+      "hint": "He is one of the most popular male playback singers in India.",
+      "answer": "Sonu Nigam"
+    },
+    {
+      "prompt": "Which actress played Simran in Dilwale Dulhania Le Jayenge?",
+      "hint": "Her surname is Mukherjee in real life.",
+      "answer": "Kajol"
+    },
+    {
+      "prompt": "Who directed the film Kabhi Khushi Kabhie Gham?",
+      "hint": "His surname is Johar.",
+      "answer": "Karan Johar"
+    },
+    {
+      "prompt": "Which actor played Munna Bhai in Munna Bhai M.B.B.S.?",
+      "hint": "His first name is Sanjay.",
+      "answer": "Sanjay Dutt"
+    },
+    {
+      "prompt": "Which film featured the song 'Chaiyya Chaiyya' shot on a moving train?",
+      "hint": "It starred Shah Rukh Khan and Manisha Koirala.",
+      "answer": "Dil Se.."
+    },
+    {
+      "prompt": "Who directed Taare Zameen Par?",
+      "hint": "He also played the art teacher in the film.",
+      "answer": "Aamir Khan"
+    },
+    {
+      "prompt": "Which actress played Poo in Kabhi Khushi Kabhie Gham?",
+      "hint": "She is also known for Jab We Met.",
+      "answer": "Kareena Kapoor"
+    },
+    {
+      "prompt": "Which actor played the role of Mogambo in Mr. India?",
+      "hint": "He was one of Bollywood's greatest villains.",
+      "answer": "Amrish Puri"
+    },
+    {
+      "prompt": "Which film stars Aamir Khan as Bhuvan?",
+      "hint": "It revolves around a cricket match in colonial India.",
+      "answer": "Lagaan"
+    },
+    {
+      "prompt": "Who directed the historical epic Jodhaa Akbar?",
+      "hint": "He also directed Lagaan.",
+      "answer": "Ashutosh Gowariker"
+    },
+    {
+      "prompt": "Which actress played the lead role in Queen?",
+      "hint": "Her surname is Ranaut.",
+      "answer": "Kangana Ranaut"
+    },
+    {
+      "prompt": "Which movie introduced the character Crime Master Gogo?",
+      "hint": "It also featured Amar and Prem.",
+      "answer": "Andaz Apna Apna"
+    },
+    {
+      "prompt": "Who played Basanti in Sholay?",
+      "hint": "She is also known as Dream Girl.",
+      "answer": "Hema Malini"
+    },
+    {
+      "prompt": "Which playback singer is known as the Nightingale of India?",
+      "hint": "Her surname is Mangeshkar.",
+      "answer": "Lata Mangeshkar"
+    },
+    {
+      "prompt": "Which singer is associated with the songs of Raj Kapoor in many classic films?",
+      "hint": "His surname is Mukesh.",
+      "answer": "Mukesh"
+    },
+    {
+      "prompt": "Which actor played the role of Circuit in the Munna Bhai films?",
+      "hint": "His first name is Arshad.",
+      "answer": "Arshad Warsi"
+    },
+    {
+      "prompt": "Which movie featured the famous dialogue 'Kitne aadmi the'?",
+      "hint": "Gabbar Singh asked it.",
+      "answer": "Sholay"
+    },
+    {
+      "prompt": "Who directed the film Rang De Basanti?",
+      "hint": "His surname is Mehra.",
+      "answer": "Rakeysh Omprakash Mehra"
+    },
+    {
+      "prompt": "Which actor played Aakash in Dil Chahta Hai?",
+      "hint": "He is also called Mr. Perfectionist.",
+      "answer": "Aamir Khan"
+    },
+    {
+      "prompt": "Which movie features the characters Bunny and Naina?",
+      "hint": "It is a popular coming-of-age romance starring Ranbir Kapoor and Deepika Padukone.",
+      "answer": "Yeh Jawaani Hai Deewani"
+    },
+    {
+      "prompt": "Who directed the film Gully Boy?",
+      "hint": "She also directed Zindagi Na Milegi Dobara.",
+      "answer": "Zoya Akhtar"
+    },
+    {
+      "prompt": "Which actor played Ram Prasad in Chupke Chupke?",
+      "hint": "He is one of Hindi cinema's greatest stars and played Jai in Sholay.",
+      "answer": "Dharmendra"
+    },
+    {
+      "prompt": "Which actress played the title role in Mary Kom?",
+      "hint": "She is also a global star and former Miss World.",
+      "answer": "Priyanka Chopra"
+    },
+    {
+      "prompt": "Which actor played Sanjay Singhania in Ghajini?",
+      "hint": "He is Mr. Perfectionist.",
+      "answer": "Aamir Khan"
+    },
+    {
+      "prompt": "Which movie featured the character of Anand played by Rajesh Khanna?",
+      "hint": "Its title is also the character's name.",
+      "answer": "Anand"
+    },
+    {
+      "prompt": "Who directed the classic guide story film Guide?",
+      "hint": "His surname is Anand.",
+      "answer": "Vijay Anand"
+    },
+    {
+      "prompt": "Which actor played the role of Devdas in the 2002 film directed by Sanjay Leela Bhansali?",
+      "hint": "He is known as King Khan.",
+      "answer": "Shah Rukh Khan"
+    }
+  ]
+}

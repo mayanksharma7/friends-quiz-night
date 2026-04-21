@@ -1,0 +1,57 @@
+{
+  "id": "capitals-of-countries",
+  "title": "Capitals of Countries",
+  "description": "A geography round focused on matching countries with their capital cities.",
+  "questions": [
+    {
+      "prompt": "What is the capital of France?",
+      "hint": "The Eiffel Tower is there.",
+      "answer": "Paris"
+    },
+    {
+      "prompt": "What is the capital of Australia?",
+      "hint": "It is not Sydney or Melbourne.",
+      "answer": "Canberra"
+    },
+    {
+      "prompt": "What is the capital of Brazil?",
+      "hint": "It was purpose-built and became the capital in 1960.",
+      "answer": "Brasilia"
+    },
+    {
+      "prompt": "What is the capital of Canada?",
+      "hint": "It is in Ontario.",
+      "answer": "Ottawa"
+    },
+    {
+      "prompt": "What is the capital of Japan?",
+      "hint": "It was formerly known as Edo.",
+      "answer": "Tokyo"
+    },
+    {
+      "prompt": "What is the capital of Kenya?",
+      "hint": "It starts with N.",
+      "answer": "Nairobi"
+    },
+    {
+      "prompt": "What is the capital of Argentina?",
+      "hint": "It is famous for tango and sits on the Rio de la Plata.",
+      "answer": "Buenos Aires"
+    },
+    {
+      "prompt": "What is the capital of Egypt?",
+      "hint": "It is on the Nile and near Giza.",
+      "answer": "Cairo"
+    },
+    {
+      "prompt": "What is the capital of South Korea?",
+      "hint": "Its name begins with S.",
+      "answer": "Seoul"
+    },
+    {
+      "prompt": "What is the capital of Turkey?",
+      "hint": "It is not Istanbul.",
+      "answer": "Ankara"
+    }
+  ]
+}
