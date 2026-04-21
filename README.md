@@ -151,10 +151,10 @@ Open [index.html](./index.html) in any modern browser.
 This repo is set up with a GitHub Actions workflow for GitHub Pages deployment:
 - [.github/workflows/deploy-pages.yml](./.github/workflows/deploy-pages.yml)
 
-Expected project site URL for this repository:
-- `https://mayanksharma7.github.io/friends-quiz-night/`
+Live site:
+- [https://mayanksharma7.github.io/friends-quiz-night/](https://mayanksharma7.github.io/friends-quiz-night/)
 
-To enable it on GitHub:
+If GitHub Pages ever needs to be re-enabled:
 1. Push this repository to GitHub.
 2. Open the repository on GitHub.
 3. Go to `Settings` -> `Pages`.
