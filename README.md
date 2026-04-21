@@ -144,12 +144,12 @@ Important limitation:
 
 ## How to run
 
-Open [index.html](/Users/maykum02/Documents/Personal/Codes/Quiz/index.html) in any modern browser.
+Open [index.html](./index.html) in any modern browser.
 
 ## GitHub Pages hosting
 
 This repo is set up with a GitHub Actions workflow for GitHub Pages deployment:
-- [.github/workflows/deploy-pages.yml](/Users/maykum02/Documents/Personal/Codes/Quiz/.github/workflows/deploy-pages.yml)
+- [.github/workflows/deploy-pages.yml](./.github/workflows/deploy-pages.yml)
 
 Expected project site URL for this repository:
 - `https://mayanksharma7.github.io/friends-quiz-night/`
@@ -214,7 +214,7 @@ The website expects this structure:
 
 ## Sample quiz packs
 
-Sample quiz files are in [question-packs](/Users/maykum02/Documents/Personal/Codes/Quiz/question-packs).
+Sample quiz files are in [question-packs](./question-packs).
 
 Included examples:
 - `question-packs/capitals-of-countries.json`
@@ -247,10 +247,10 @@ If GPT or another AI is asked to create a new quiz file for this website, it sho
 - for India-focused quizzes, prefer Indian English spelling and familiar context
 
 Reusable prompt template for GPT:
-- [question-packs/TEMPLATE_PROMPT.md](/Users/maykum02/Documents/Personal/Codes/Quiz/question-packs/TEMPLATE_PROMPT.md)
+- [question-packs/TEMPLATE_PROMPT.md](./question-packs/TEMPLATE_PROMPT.md)
 
 Reusable JSON skeleton:
-- [question-packs/template.quiz.json](/Users/maykum02/Documents/Personal/Codes/Quiz/question-packs/template.quiz.json)
+- [question-packs/template.quiz.json](./question-packs/template.quiz.json)
 
 ## AI context for future changes
 
@@ -268,10 +268,10 @@ If an AI assistant is updating this project later, these points matter:
 
 ## Main project files
 
-- [index.html](/Users/maykum02/Documents/Personal/Codes/Quiz/index.html): main app markup
-- [styles.css](/Users/maykum02/Documents/Personal/Codes/Quiz/styles.css): visual design and layout
-- [app.js](/Users/maykum02/Documents/Personal/Codes/Quiz/app.js): quiz logic, UI state, persistence, shortcuts
-- [question-packs](/Users/maykum02/Documents/Personal/Codes/Quiz/question-packs): sample and template quiz JSON files
+- [index.html](./index.html): main app markup
+- [styles.css](./styles.css): visual design and layout
+- [app.js](./app.js): quiz logic, UI state, persistence, shortcuts
+- [question-packs](./question-packs): sample and template quiz JSON files
 
 ## Good next improvements
 
