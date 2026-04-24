@@ -1,0 +1,17 @@
+{
+  "id": "test-quick-check",
+  "title": "Test Quick Check",
+  "description": "A short 10-question quiz pack for testing the game flow, scoring, hints, passes, and end-of-quiz behavior.",
+  "questions": [
+    { "prompt": "What color do you get when you mix red and yellow?", "hint": "It is a common fruit color.", "answer": "Orange" },
+    { "prompt": "How many days are there in a week?", "hint": "It is more than five and less than eight.", "answer": "7" },
+    { "prompt": "Which planet is known as the Red Planet?", "hint": "It is named after the Roman god of war.", "answer": "Mars" },
+    { "prompt": "What is the capital of India?", "hint": "It begins with New.", "answer": "New Delhi" },
+    { "prompt": "Which animal is called the King of the Jungle?", "hint": "It has a mane.", "answer": "Lion" },
+    { "prompt": "What is 9 plus 6?", "hint": "It is halfway between 10 and 20.", "answer": "15" },
+    { "prompt": "Which festival is known as the Festival of Lights in India?", "hint": "It is celebrated with diyas.", "answer": "Diwali" },
+    { "prompt": "How many letters are there in the English alphabet?", "hint": "It is more than 20.", "answer": "26" },
+    { "prompt": "Which ocean lies to the south of India?", "hint": "Its name starts with Indian.", "answer": "Indian Ocean" },
+    { "prompt": "What do bees make?", "hint": "It is sweet and golden.", "answer": "Honey" }
+  ]
+}

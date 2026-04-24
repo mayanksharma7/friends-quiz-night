@@ -1,257 +1,57 @@
 {
   "id": "indian-food-festivals-and-culture",
   "title": "Indian Food, Festivals and Culture",
-  "description": "A lively round on Indian cuisine, celebrations, traditional arts, music, and cultural symbols.",
+  "description": "A broader Indian culture round with regional cuisine, seasonal festivals, classical arts, textiles, and traditions.",
   "questions": [
-    {
-      "prompt": "Which festival is known as the Festival of Lights?",
-      "hint": "It is celebrated with diyas and fireworks.",
-      "answer": "Diwali"
-    },
-    {
-      "prompt": "Which harvest festival is celebrated with kites in Gujarat?",
-      "hint": "It takes place in January.",
-      "answer": "Makar Sankranti"
-    },
-    {
-      "prompt": "Which festival is famous for colours and water balloons?",
-      "hint": "It marks the arrival of spring.",
-      "answer": "Holi"
-    },
-    {
-      "prompt": "Biryani is traditionally a dish made mainly with rice and what other main component?",
-      "hint": "It is usually meat or vegetables cooked with spices.",
-      "answer": "Meat or vegetables"
-    },
-    {
-      "prompt": "Which South Indian dish is made from a fermented batter and served like a thin crisp crepe?",
-      "hint": "It is often paired with sambar and chutney.",
-      "answer": "Dosa"
-    },
-    {
-      "prompt": "From which state is the dance form Kathakali associated?",
-      "hint": "It is on India's southwest coast.",
-      "answer": "Kerala"
-    },
-    {
-      "prompt": "Which sweet is especially associated with Kolkata and is made from chhena?",
-      "hint": "It is white, soft, and soaked in syrup.",
-      "answer": "Rasgulla"
-    },
-    {
-      "prompt": "Which Punjabi dish is commonly eaten with makki di roti?",
-      "hint": "It is made using mustard greens.",
-      "answer": "Sarson da saag"
-    },
-    {
-      "prompt": "Which festival marks the birth of Lord Krishna?",
-      "hint": "It often includes dahi handi celebrations.",
-      "answer": "Janmashtami"
-    },
-    {
-      "prompt": "Which state is famous for the traditional dance Bihu?",
-      "hint": "It is a major northeastern state known for tea.",
-      "answer": "Assam"
-    },
-    {
-      "prompt": "What is the main ingredient of idli?",
-      "hint": "It is made from a fermented rice and lentil batter.",
-      "answer": "Rice and lentil batter"
-    },
-    {
-      "prompt": "Which festival celebrates the bond between brothers and sisters with a sacred thread?",
-      "hint": "It starts with the word Raksha.",
-      "answer": "Raksha Bandhan"
-    },
-    {
-      "prompt": "Which classical dance form originated in Tamil Nadu and is often performed in temple jewellery?",
-      "hint": "Its name starts with B.",
-      "answer": "Bharatanatyam"
-    },
-    {
-      "prompt": "Puran Poli is a festive dish especially popular in which Indian state?",
-      "hint": "Its capital is Mumbai.",
-      "answer": "Maharashtra"
-    },
-    {
-      "prompt": "Which festival is especially associated with the worship of Goddess Durga in West Bengal?",
-      "hint": "Large pandals are a major feature of it.",
-      "answer": "Durga Puja"
-    },
-    {
-      "prompt": "What is lassi traditionally made from?",
-      "hint": "It is a dairy-based drink.",
-      "answer": "Yogurt"
-    },
-    {
-      "prompt": "Which city is especially famous for chaat and pani puri culture in Uttar Pradesh?",
-      "hint": "It is also known for the Kashi Vishwanath Temple.",
-      "answer": "Varanasi"
-    },
-    {
-      "prompt": "Which dance form from Odisha is known for graceful poses and temple-sculpture inspiration?",
-      "hint": "Its name begins with O.",
-      "answer": "Odissi"
-    },
-    {
-      "prompt": "Which festival in Kerala is famous for boat races and a grand floral decoration called pookalam?",
-      "hint": "It is a harvest festival.",
-      "answer": "Onam"
-    },
-    {
-      "prompt": "What is the main filling of a traditional aloo paratha?",
-      "hint": "The clue is in the name.",
-      "answer": "Potato"
-    },
-    {
-      "prompt": "Which North Indian snack is a deep-fried pastry usually stuffed with spiced potato filling?",
-      "hint": "It is often triangular.",
-      "answer": "Samosa"
-    },
-    {
-      "prompt": "Which sweet is commonly served during Ganesh Chaturthi and is said to be Lord Ganesha's favourite?",
-      "hint": "It has a coconut and jaggery filling.",
-      "answer": "Modak"
-    },
-    {
-      "prompt": "Which stringed instrument is strongly associated with Ravi Shankar?",
-      "hint": "It is used widely in Hindustani classical music.",
-      "answer": "Sitar"
-    },
-    {
-      "prompt": "Which festival celebrates the Sikh New Year and the formation of the Khalsa?",
-      "hint": "It is widely celebrated in Punjab in April.",
-      "answer": "Vaisakhi"
-    },
-    {
-      "prompt": "Which festival marks the end of Ramadan for Muslims in India?",
-      "hint": "It is commonly called the smaller Eid.",
-      "answer": "Eid al-Fitr"
-    },
-    {
-      "prompt": "Which grand Rajasthani folk dance is performed by women balancing pots on their heads?",
-      "hint": "Its name starts with G.",
-      "answer": "Ghoomar"
-    },
-    {
-      "prompt": "Which festival is famous in Tamil Nadu as a harvest thanksgiving celebration?",
-      "hint": "It is celebrated in January with sweet rice.",
-      "answer": "Pongal"
-    },
-    {
-      "prompt": "What is the main lentil dish served with rice in many Indian homes and commonly called dal?",
-      "hint": "Its name is the same as the Hindi word for lentils.",
-      "answer": "Dal"
-    },
-    {
-      "prompt": "Which sweet dish is made by reducing milk and often flavoured with cardamom and nuts?",
-      "hint": "It is chilled and starts with K.",
-      "answer": "Kheer"
-    },
-    {
-      "prompt": "Which festival is associated with the worship of Lord Ganesha on a large public scale in Maharashtra?",
-      "hint": "It ends with Chaturthi.",
-      "answer": "Ganesh Chaturthi"
-    },
-    {
-      "prompt": "Which dance form from Uttar Pradesh is associated with intricate footwork and storytelling?",
-      "hint": "It shares its name with one of India's classical dances beginning with K.",
-      "answer": "Kathak"
-    },
-    {
-      "prompt": "Which traditional flatbread is baked in a tandoor?",
-      "hint": "It is common in North Indian restaurants.",
-      "answer": "Naan"
-    },
-    {
-      "prompt": "Which Gujarati snack made from gram flour is usually yellow and soft?",
-      "hint": "It is often eaten with green chutney.",
-      "answer": "Dhokla"
-    },
-    {
-      "prompt": "Which famous Hyderabadi dish combines rice, spices, and slow cooking?",
-      "hint": "It shares its name with a famous all-India rice dish.",
-      "answer": "Hyderabadi biryani"
-    },
-    {
-      "prompt": "Which dance form from Andhra Pradesh features graceful expressions and storytelling?",
-      "hint": "Its name starts with K and ends with pudi.",
-      "answer": "Kuchipudi"
-    },
-    {
-      "prompt": "Which Maharashtrian street food consists of a spicy potato fritter inside a bun?",
-      "hint": "It is a Mumbai favourite.",
-      "answer": "Vada pav"
-    },
-    {
-      "prompt": "Which classical music tradition is associated mainly with North India?",
-      "hint": "It is paired with the Carnatic tradition in the south.",
-      "answer": "Hindustani classical music"
-    },
-    {
-      "prompt": "Which classical music tradition is associated mainly with South India?",
-      "hint": "It is paired with the Hindustani tradition in the north.",
-      "answer": "Carnatic music"
-    },
-    {
-      "prompt": "Which sweet from Rajasthan and many other states is a round syrup-soaked dessert often served hot?",
-      "hint": "Its name has two words and starts with G.",
-      "answer": "Gulab jamun"
-    },
-    {
-      "prompt": "Which festival in Assam celebrates the Assamese New Year and is also the name of a dance?",
-      "hint": "Its name starts with B.",
-      "answer": "Bihu"
-    },
-    {
-      "prompt": "What is the main ingredient in paneer tikka besides spices?",
-      "hint": "It is Indian cottage cheese.",
-      "answer": "Paneer"
-    },
-    {
-      "prompt": "Which state is especially associated with the dance form Garba during Navratri?",
-      "hint": "Its capital is Gandhinagar.",
-      "answer": "Gujarat"
-    },
-    {
-      "prompt": "Which festival is celebrated by Christians in India on 25 December?",
-      "hint": "It marks the birth of Jesus Christ.",
-      "answer": "Christmas"
-    },
-    {
-      "prompt": "Which sweet made from gram flour, ghee, and sugar is called besan what?",
-      "hint": "It is a popular round festive sweet.",
-      "answer": "Besan laddu"
-    },
-    {
-      "prompt": "Which beverage made with tea, milk, sugar, and spices is commonly called masala what?",
-      "hint": "It is a daily staple across India.",
-      "answer": "Masala chai"
-    },
-    {
-      "prompt": "Which snack from Delhi and North India is made from crisp puris, yogurt, chutneys, and spices?",
-      "hint": "Its name starts with Dahi.",
-      "answer": "Dahi bhalla"
-    },
-    {
-      "prompt": "Which vegetarian Gujarati platter often includes multiple small dishes served together?",
-      "hint": "It is named after the style of serving itself.",
-      "answer": "Gujarati thali"
-    },
-    {
-      "prompt": "Which drum is commonly used in Punjabi bhangra performances?",
-      "hint": "It is a double-sided drum.",
-      "answer": "Dhol"
-    },
-    {
-      "prompt": "Which sweet dish from Bengal is made from caramelised milk and is known for being soft and spongy?",
-      "hint": "Its name starts with M.",
-      "answer": "Mishti doi"
-    },
-    {
-      "prompt": "Which colorful nine-night festival honors Goddess Durga and is famous for dandiya dances?",
-      "hint": "Its name starts with N.",
-      "answer": "Navratri"
-    }
+    { "prompt": "Which festival in Kerala is marked by the floral design called pookalam?", "hint": "It celebrates the annual homecoming of King Mahabali.", "answer": "Onam" },
+    { "prompt": "Which Punjabi folk dance is traditionally performed by men during harvest celebrations?", "hint": "Its female counterpart is gidda.", "answer": "Bhangra" },
+    { "prompt": "Which sweet from Odisha and Bengal sparked a long-running origin debate and is made from chhena?", "hint": "It is soaked in sugar syrup.", "answer": "Rasgulla" },
+    { "prompt": "What is the principal grain used in pongal, the South Indian festive dish from which the festival takes one of its names?", "hint": "It is cooked with lentils in the savory version.", "answer": "Rice" },
+    { "prompt": "Which classical dance form of Kerala is known for elaborate face makeup and all-night storytelling?", "hint": "It features green, red, and black facial color coding.", "answer": "Kathakali" },
+    { "prompt": "Which festival in Assam centers on the annual Ambubachi Mela at the Kamakhya Temple?", "hint": "It is linked with the monsoon and the feminine principle.", "answer": "Ambubachi" },
+    { "prompt": "Which Maharashtrian festive flatbread is stuffed with jaggery and lentils?", "hint": "It is especially popular during Holi and Gudi Padwa season.", "answer": "Puran Poli" },
+    { "prompt": "Which textile tradition from Gujarat and Rajasthan uses tie-and-dye techniques and is also called bandhej?", "hint": "Its name starts with B.", "answer": "Bandhani" },
+    { "prompt": "Which classical dance form is associated with the temples of Odisha?", "hint": "Its tribhangi stance is distinctive.", "answer": "Odissi" },
+    { "prompt": "Which harvest festival of Tamil Nadu includes the day Mattu Pongal for honoring cattle?", "hint": "It is celebrated in January.", "answer": "Pongal" },
+    { "prompt": "Which Kashmiri multi-course feast is known as wazwan?", "hint": "It is especially associated with weddings and formal banquets.", "answer": "Wazwan" },
+    { "prompt": "Which instrument is traditionally associated with the Bismillah Khan and often heard at temple and wedding ceremonies?", "hint": "It is a reed instrument.", "answer": "Shehnai" },
+    { "prompt": "Which Rajasthani dance form is performed balancing multiple pots on the head?", "hint": "It is often seen in desert cultural shows.", "answer": "Bhavai" },
+    { "prompt": "Which festival marks the beginning of the Vikram Samvat new year in parts of western India and is symbolized by a raised banner?", "hint": "It is especially associated with Maharashtra.", "answer": "Gudi Padwa" },
+    { "prompt": "Which dish from Hyderabad combines rice with meat and is famous for its dum cooking technique?", "hint": "It is perhaps the city's best-known culinary export.", "answer": "Hyderabadi biryani" },
+    { "prompt": "Which classical dance form from Andhra Pradesh takes its name from a village in Krishna district?", "hint": "It was revived in the 20th century by Vempati Chinna Satyam and others.", "answer": "Kuchipudi" },
+    { "prompt": "Which festival in north India celebrates the bond between brothers and sisters with a sacred thread tied on the wrist?", "hint": "It falls in the month of Shravana.", "answer": "Raksha Bandhan" },
+    { "prompt": "Which Gujarati snack made from gram flour is often steamed and then tempered with mustard seeds?", "hint": "It is yellow and sponge-like.", "answer": "Dhokla" },
+    { "prompt": "Which dance-drama tradition of Karnataka centers on mythological stories and flamboyant costume?", "hint": "Its name begins with Y.", "answer": "Yakshagana" },
+    { "prompt": "Which autumn festival in West Bengal culminates with the immersion of Goddess Durga's image?", "hint": "Its main days are Saptami, Ashtami, Navami, and Dashami.", "answer": "Durga Puja" },
+    { "prompt": "Which Bengali sweet, shaped like a round fried ball, is associated with Nadia district and often confused with rasgulla?", "hint": "Its syrup is darker and caramelized.", "answer": "Pantua" },
+    { "prompt": "Which Indian classical music gharana is strongly associated with Ustad Allauddin Khan and later Ravi Shankar and Ali Akbar Khan?", "hint": "Its name comes from a princely state in Madhya Pradesh.", "answer": "Maihar gharana" },
+    { "prompt": "Which festival of lights in Punjab commemorates the release of Guru Hargobind and coincides with Diwali?", "hint": "Its name begins with Bandi.", "answer": "Bandi Chhor Divas" },
+    { "prompt": "Which rice-based fermented dish from Kerala is served with vegetable stew and is often bowl-shaped?", "hint": "It is soft in the centre and lacy at the edges.", "answer": "Appam" },
+    { "prompt": "Which Indian art tradition from Bihar uses natural dyes and was historically painted on mud walls?", "hint": "It is also named after a region called Mithila.", "answer": "Madhubani painting" },
+    { "prompt": "Which spring festival in Manipur features the Thabal Chongba dance and often overlaps with Yaoshang celebrations?", "hint": "It is sometimes compared to Holi in spirit.", "answer": "Yaoshang" },
+    { "prompt": "Which Mughlai dessert from Hyderabad is made from bread, milk, and dry fruits?", "hint": "Its name literally means sweet dish of bread.", "answer": "Double ka meetha" },
+    { "prompt": "Which classical dance form of Tamil Nadu grew out of the old Sadir tradition?", "hint": "Rukmini Devi Arundale played a major role in its revival.", "answer": "Bharatanatyam" },
+    { "prompt": "Which annual fair in Rajasthan is famous for both camel trading and a sacred lake pilgrimage?", "hint": "It is named after the town where it is held.", "answer": "Pushkar Fair" },
+    { "prompt": "Which Maharashtrian savory snack made from spiced mashed potatoes in a batter is paired with pav?", "hint": "It is a famous Mumbai street food.", "answer": "Vada pav" },
+    { "prompt": "Which folk theatre form from Uttar Pradesh and adjoining regions combines song, dance, and dramatic narration?", "hint": "It is a traveling performance tradition with a rhyming name.", "answer": "Nautanki" },
+    { "prompt": "Which Sikh festival commemorates the founding of the Khalsa in 1699?", "hint": "It is celebrated in April.", "answer": "Vaisakhi" },
+    { "prompt": "Which Rajasthani dish made from gram flour dumplings in yogurt gravy is often served with bajra roti?", "hint": "Its name has two words.", "answer": "Gatte ki sabzi" },
+    { "prompt": "Which weaving tradition of Banaras is especially famous for rich silk sarees with zari work?", "hint": "It shares its name with the city's older English spelling.", "answer": "Banarasi weaving or Banarasi silk" },
+    { "prompt": "Which instrument associated with Shivkumar Sharma was adapted to Indian classical music from Kashmiri folk tradition?", "hint": "It is struck with small mallets.", "answer": "Santoor" },
+    { "prompt": "Which festival in Goa involves floats, costumes, and revelry just before Lent?", "hint": "It reflects the state's Portuguese heritage.", "answer": "Goa Carnival" },
+    { "prompt": "Which Bengali rice-and-fish meal is considered so emblematic that fish features heavily in wedding and ritual customs?", "hint": "The fish in question is often hilsa or rohu, but the cultural identity is broader.", "answer": "Machh-bhaat" },
+    { "prompt": "Which painting style from Rajasthan and Madhya Pradesh is known for intricate devotional depictions of Krishna and nature?", "hint": "Its name begins with P and is also a princely state school.", "answer": "Pichwai" },
+    { "prompt": "Which Jain festival centers on forgiveness and ends with Kshamavani for many practitioners?", "hint": "Shvetambara and Digambara traditions observe it differently.", "answer": "Paryushana" },
+    { "prompt": "Which Mangalorean dish pairs crisp dried rice wafers with spicy chicken curry?", "hint": "Its name has two words, the second meaning bread or roti.", "answer": "Kori rotti" },
+    { "prompt": "Which devotional song tradition of Maharashtra and north Karnataka is associated with Vithoba worship and the Varkari movement?", "hint": "Many are composed by Tukaram and Namdev.", "answer": "Abhang" },
+    { "prompt": "Which New Year festival in Kashmir is traditionally called Navreh?", "hint": "It is observed by Kashmiri Pandits.", "answer": "Navreh" },
+    { "prompt": "Which millet flatbread from Maharashtra is often eaten with thecha or pithla?", "hint": "It is thicker than a chapati and made by hand patting.", "answer": "Bhakri" },
+    { "prompt": "Which martial-art performance tradition from Kerala combines combat training with ritual movement?", "hint": "It is often cited among the world's oldest fighting systems.", "answer": "Kalaripayattu" },
+    { "prompt": "Which festival in Bihar and eastern Uttar Pradesh involves offering arghya to the setting and rising sun?", "hint": "It is observed with strict fasting and riverbank rituals.", "answer": "Chhath" },
+    { "prompt": "Which sweet dish from Karnataka made with lentils, jaggery, coconut, and cardamom is a festive filling for obbattu?", "hint": "It shares a family resemblance with puran in puran poli.", "answer": "Holige or obbattu filling of bele hoorna is accepted; main answer: Holige" },
+    { "prompt": "Which north Indian string instrument is most associated with Ustad Vilayat Khan and Pt. Ravi Shankar's repertoire tradition?", "hint": "It has long frets and sympathetic strings.", "answer": "Sitar" },
+    { "prompt": "Which annual dance festival in Odisha is held against the illuminated backdrop of the Konark Sun Temple?", "hint": "It shares its name with the monument town.", "answer": "Konark Dance Festival" },
+    { "prompt": "Which festival in Tamil Nadu marks the raising of a ceremonial kalasam and elaborate kolam patterns during the Margazhi season dedicated to Andal?", "hint": "It culminates around the month of January and is associated with devotional hymns.", "answer": "Margazhi festival or Andal-related Margazhi observances" },
+    { "prompt": "Which Lucknowi rice dish is lighter than biryani and cooked with stock, aromatic spices, and meat?", "hint": "Its name begins with Y and is associated with Awadhi cuisine.", "answer": "Yakhni pulao" }
   ]
 }

@@ -1,57 +1,57 @@
 {
   "id": "capitals-of-countries",
   "title": "Capitals of Countries",
-  "description": "A geography round focused on matching countries with their capital cities.",
+  "description": "A tougher world-capitals round with fewer giveaway questions and more quiz-night depth.",
   "questions": [
-    {
-      "prompt": "What is the capital of France?",
-      "hint": "The Eiffel Tower is there.",
-      "answer": "Paris"
-    },
-    {
-      "prompt": "What is the capital of Australia?",
-      "hint": "It is not Sydney or Melbourne.",
-      "answer": "Canberra"
-    },
-    {
-      "prompt": "What is the capital of Brazil?",
-      "hint": "It was purpose-built and became the capital in 1960.",
-      "answer": "Brasilia"
-    },
-    {
-      "prompt": "What is the capital of Canada?",
-      "hint": "It is in Ontario.",
-      "answer": "Ottawa"
-    },
-    {
-      "prompt": "What is the capital of Japan?",
-      "hint": "It was formerly known as Edo.",
-      "answer": "Tokyo"
-    },
-    {
-      "prompt": "What is the capital of Kenya?",
-      "hint": "It starts with N.",
-      "answer": "Nairobi"
-    },
-    {
-      "prompt": "What is the capital of Argentina?",
-      "hint": "It is famous for tango and sits on the Rio de la Plata.",
-      "answer": "Buenos Aires"
-    },
-    {
-      "prompt": "What is the capital of Egypt?",
-      "hint": "It is on the Nile and near Giza.",
-      "answer": "Cairo"
-    },
-    {
-      "prompt": "What is the capital of South Korea?",
-      "hint": "Its name begins with S.",
-      "answer": "Seoul"
-    },
-    {
-      "prompt": "What is the capital of Turkey?",
-      "hint": "It is not Istanbul.",
-      "answer": "Ankara"
-    }
+    { "prompt": "What is the capital of Belize?", "hint": "It replaced Belize City as capital after a devastating hurricane.", "answer": "Belmopan" },
+    { "prompt": "What is the capital of Benin?", "hint": "It is not Cotonou, which is the economic centre.", "answer": "Porto-Novo" },
+    { "prompt": "What is the capital of Bhutan?", "hint": "It lies in a valley in the western part of the country.", "answer": "Thimphu" },
+    { "prompt": "What is the capital of Botswana?", "hint": "It begins with G and is near the South African border.", "answer": "Gaborone" },
+    { "prompt": "What is the capital of Burundi?", "hint": "It replaced Bujumbura as political capital in 2019.", "answer": "Gitega" },
+    { "prompt": "What is the capital of Cambodia?", "hint": "It sits at the confluence of the Mekong and Tonle Sap rivers.", "answer": "Phnom Penh" },
+    { "prompt": "What is the capital of Cameroon?", "hint": "It is not Douala.", "answer": "Yaounde" },
+    { "prompt": "What is the capital of Colombia?", "hint": "It is on a high plateau in the Andes.", "answer": "Bogota" },
+    { "prompt": "What is the capital of the Democratic Republic of the Congo?", "hint": "It faces Brazzaville across the Congo River.", "answer": "Kinshasa" },
+    { "prompt": "What is the capital of Ecuador?", "hint": "It is one of the highest official capitals in the world.", "answer": "Quito" },
+    { "prompt": "What is the capital of Ethiopia?", "hint": "It is also the headquarters of the African Union.", "answer": "Addis Ababa" },
+    { "prompt": "What is the capital of Fiji?", "hint": "It is on the island of Viti Levu.", "answer": "Suva" },
+    { "prompt": "What is the capital of Georgia?", "hint": "It stands on the Kura River.", "answer": "Tbilisi" },
+    { "prompt": "What is the capital of Guatemala?", "hint": "It shares its name with the country.", "answer": "Guatemala City" },
+    { "prompt": "What is the capital of Honduras?", "hint": "Its name begins with T.", "answer": "Tegucigalpa" },
+    { "prompt": "What is the capital of Kazakhstan?", "hint": "It has previously been called Nur-Sultan.", "answer": "Astana" },
+    { "prompt": "What is the capital of Kyrgyzstan?", "hint": "It begins with B and lies near the Tian Shan mountains.", "answer": "Bishkek" },
+    { "prompt": "What is the capital of Laos?", "hint": "Its name means 'city of sandalwood'.", "answer": "Vientiane" },
+    { "prompt": "What is the capital of Lithuania?", "hint": "It is famous for its baroque old town.", "answer": "Vilnius" },
+    { "prompt": "What is the capital of Madagascar?", "hint": "It is often shortened to Tana in conversation.", "answer": "Antananarivo" },
+    { "prompt": "What is the capital of Malawi?", "hint": "It replaced Zomba as capital.", "answer": "Lilongwe" },
+    { "prompt": "What is the capital of Moldova?", "hint": "It begins with C and is also spelled Chisinau in English.", "answer": "Chisinau" },
+    { "prompt": "What is the capital of Mongolia?", "hint": "It is one of the coldest capitals in the world.", "answer": "Ulaanbaatar" },
+    { "prompt": "What is the capital of Myanmar?", "hint": "It replaced Yangon as the official capital in 2005.", "answer": "Naypyidaw" },
+    { "prompt": "What is the capital of Namibia?", "hint": "Its name suggests moving air.", "answer": "Windhoek" },
+    { "prompt": "What is the capital of Nicaragua?", "hint": "It lies on the south shore of Lake Managua.", "answer": "Managua" },
+    { "prompt": "What is the capital of Nigeria?", "hint": "It replaced Lagos as the capital in 1991.", "answer": "Abuja" },
+    { "prompt": "What is the capital of Oman?", "hint": "It is a port city on the Gulf of Oman.", "answer": "Muscat" },
+    { "prompt": "What is the capital of Panama?", "hint": "It shares its name with the country.", "answer": "Panama City" },
+    { "prompt": "What is the capital of Paraguay?", "hint": "It lies on the Paraguay River.", "answer": "Asuncion" },
+    { "prompt": "What is the capital of the Philippines?", "hint": "It is part of the National Capital Region.", "answer": "Manila" },
+    { "prompt": "What is the capital of Romania?", "hint": "It is the country's largest city and financial centre.", "answer": "Bucharest" },
+    { "prompt": "What is the capital of Rwanda?", "hint": "It is known for its cleanliness and hills.", "answer": "Kigali" },
+    { "prompt": "What is the capital of Senegal?", "hint": "It is on the Cap-Vert peninsula.", "answer": "Dakar" },
+    { "prompt": "What is the capital of Slovenia?", "hint": "Its name begins with L and includes a soft 'j' sound.", "answer": "Ljubljana" },
+    { "prompt": "What is the administrative capital of South Africa?", "hint": "It is not Cape Town or Bloemfontein.", "answer": "Pretoria" },
+    { "prompt": "What is the capital of Sri Lanka?", "hint": "It is not Colombo.", "answer": "Sri Jayawardenepura Kotte" },
+    { "prompt": "What is the capital of Suriname?", "hint": "It lies on the Suriname River.", "answer": "Paramaribo" },
+    { "prompt": "What is the de facto capital of Switzerland?", "hint": "It is not Zurich or Geneva.", "answer": "Bern" },
+    { "prompt": "What is the capital of Tajikistan?", "hint": "Its name literally means 'Monday'.", "answer": "Dushanbe" },
+    { "prompt": "What is the capital of Tanzania?", "hint": "It is not Dar es Salaam.", "answer": "Dodoma" },
+    { "prompt": "What is the capital of Turkmenistan?", "hint": "It begins with A and is known for white marble buildings.", "answer": "Ashgabat" },
+    { "prompt": "What is the capital of Uganda?", "hint": "It is built over a series of hills.", "answer": "Kampala" },
+    { "prompt": "What is the capital of Uruguay?", "hint": "It lies on the Rio de la Plata.", "answer": "Montevideo" },
+    { "prompt": "What is the capital of Uzbekistan?", "hint": "It is the largest city in Central Asia by population.", "answer": "Tashkent" },
+    { "prompt": "What is the capital of Zambia?", "hint": "It begins with L and is on a plateau in the south-central part of the country.", "answer": "Lusaka" },
+    { "prompt": "What is the capital of Zimbabwe?", "hint": "It was once called Salisbury.", "answer": "Harare" },
+    { "prompt": "What is the official capital of Ivory Coast?", "hint": "It is not Abidjan.", "answer": "Yamoussoukro" },
+    { "prompt": "What is the capital of New Zealand?", "hint": "It lies at the southern end of the North Island.", "answer": "Wellington" },
+    { "prompt": "What is the capital of Canada?", "hint": "It sits on the border of Ontario and Quebec.", "answer": "Ottawa" }
   ]
 }

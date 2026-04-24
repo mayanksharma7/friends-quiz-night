@@ -65,20 +65,25 @@
           <article class="card setup-section-card">
             <div class="panel-heading compact">
               <div>
-                <p class="section-kicker">2. Load quiz file</p>
+                <p class="section-kicker">2. Load quiz</p>
                 <h2>Quiz source</h2>
               </div>
             </div>
 
             <div class="file-loader-card">
-              <label class="file-picker" for="quizFileInput">
-                <span class="file-picker-title">Choose quiz file</span>
+              <label class="field-label compact-label" for="quizSourceSelect">
+                Question pack or file
               </label>
+              <div class="pack-loader-controls">
+                <select id="quizSourceSelect">
+                  <option value="">Choose a quiz source</option>
+                </select>
+                <button class="primary-button" id="loadSourceBtn" type="button">
+                  Load quiz
+                </button>
+              </div>
               <input id="quizFileInput" type="file" accept=".json,application/json" />
               <div class="file-loader-actions">
-                <button class="primary-button" id="loadFileBtn" type="button">
-                  Load file
-                </button>
                 <button class="ghost-button" id="clearQuestionsBtn" type="button">
                   Clear bank
                 </button>
@@ -238,6 +243,7 @@
       </article>
     </template>
 
+    <script src="./question-packs/pack-manifest.js"></script>
     <script src="./sounds/sound-manifest.js"></script>
     <script src="./app.js"></script>
   </body>

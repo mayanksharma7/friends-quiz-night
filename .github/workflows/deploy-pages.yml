@@ -34,6 +34,9 @@ jobs:
       - name: Generate sound manifest
         run: node ./scripts/generate-sound-manifest.mjs
 
+      - name: Generate question pack manifest
+        run: node ./scripts/generate-question-pack-manifest.mjs
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

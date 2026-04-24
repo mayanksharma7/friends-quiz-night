@@ -36,8 +36,9 @@ const elements = {
   revealHintBtn: document.querySelector("#revealHintBtn"),
   nextQuestionBtn: document.querySelector("#nextQuestionBtn"),
   soundToggleBtn: document.querySelector("#soundToggleBtn"),
+  quizSourceSelect: document.querySelector("#quizSourceSelect"),
+  loadSourceBtn: document.querySelector("#loadSourceBtn"),
   quizFileInput: document.querySelector("#quizFileInput"),
-  loadFileBtn: document.querySelector("#loadFileBtn"),
   clearQuestionsBtn: document.querySelector("#clearQuestionsBtn"),
   fileStatus: document.querySelector("#fileStatus"),
 };
@@ -64,6 +65,10 @@ const soundLibrary = Object.fromEntries(
     Array.isArray(sounds) ? sounds : [],
   ])
 );
+const builtInQuizPacks = Array.isArray(window.__QUIZ_PACK_MANIFEST__)
+  ? window.__QUIZ_PACK_MANIFEST__
+  : [];
+const FILE_SOURCE_VALUE = "__load_from_file__";
 
 const audioCache = new Map();
 
@@ -351,12 +356,18 @@ function readQuestionsFromEditors() {
 
 function updateFileStatus() {
   if (state.draft.loadedQuizName) {
-    elements.fileStatus.textContent = `Loaded quiz file: ${state.draft.loadedQuizName} (${state.questions.length} questions).`;
+    elements.fileStatus.textContent = `Loaded quiz: ${state.draft.loadedQuizName} (${state.questions.length} questions).`;
     return;
   }
 
-  elements.fileStatus.textContent =
-    "Use any quiz JSON file. Sample files already exist in the `question-packs` folder.";
+  const [selectedFile] = elements.quizFileInput.files || [];
+
+  if (selectedFile) {
+    elements.fileStatus.textContent = `Selected file: ${selectedFile.name}. Click Load quiz to import it.`;
+    return;
+  }
+
+  elements.fileStatus.textContent = "Load a built-in question pack or choose a quiz JSON file.";
 }
 
 function validateQuizPayload(payload) {
@@ -383,6 +394,81 @@ function validateQuizPayload(payload) {
   };
 }
 
+function applyLoadedQuiz(quiz, source = "") {
+  state.draft.loadedQuizName = `${quiz.title}${quiz.description ? ` - ${quiz.description}` : ""}`;
+  state.questions = quiz.questions;
+  replaceQuestionEditors(quiz.questions);
+
+  if (source === "pack") {
+    const matchedPack = builtInQuizPacks.find((pack) => pack.title === quiz.title);
+    elements.quizSourceSelect.value = matchedPack?.id || "";
+    elements.quizFileInput.value = "";
+  } else if (source === "file") {
+    populateBuiltInPackOptions(elements.quizFileInput.files?.[0]?.name || "");
+    elements.quizSourceSelect.value = FILE_SOURCE_VALUE;
+  }
+
+  updateFileStatus();
+}
+
+function populateBuiltInPackOptions(selectedFileName = "") {
+  const selectedValue = elements.quizSourceSelect.value;
+  elements.quizSourceSelect.innerHTML = '<option value="">Choose a quiz source</option>';
+
+  builtInQuizPacks.forEach((pack) => {
+    const option = document.createElement("option");
+    option.value = pack.id;
+    option.textContent = `${pack.title} (${pack.questions.length})`;
+    elements.quizSourceSelect.appendChild(option);
+  });
+
+  const fileOption = document.createElement("option");
+  fileOption.value = FILE_SOURCE_VALUE;
+  fileOption.textContent = selectedFileName ? `File: ${selectedFileName}` : "Load from file...";
+  elements.quizSourceSelect.appendChild(fileOption);
+
+  elements.quizSourceSelect.value = selectedValue;
+}
+
+async function loadSelectedQuizSource() {
+  const selectedSource = elements.quizSourceSelect.value;
+
+  if (!selectedSource) {
+    elements.setupMessage.textContent = "Choose a quiz source first.";
+    return;
+  }
+
+  if (selectedSource === FILE_SOURCE_VALUE) {
+    const [file] = elements.quizFileInput.files || [];
+
+    if (!file) {
+      elements.setupMessage.textContent = "Choose a quiz JSON file first.";
+      elements.quizFileInput.click();
+      return;
+    }
+
+    await loadQuizFromSelectedFile();
+    return;
+  }
+
+  const pack = builtInQuizPacks.find((entry) => entry.id === selectedSource);
+
+  if (!pack) {
+    elements.setupMessage.textContent = "That question pack could not be found.";
+    return;
+  }
+
+  try {
+    const quiz = validateQuizPayload(pack);
+    applyLoadedQuiz(quiz, "pack");
+    elements.setupMessage.textContent = `${quiz.title} loaded with ${quiz.questions.length} questions.`;
+    saveState();
+  } catch (error) {
+    elements.setupMessage.textContent = "That question pack is not valid quiz data.";
+    console.error(error);
+  }
+}
+
 async function loadQuizFromSelectedFile() {
   const [file] = elements.quizFileInput.files || [];
 
@@ -398,10 +484,7 @@ async function loadQuizFromSelectedFile() {
     const payload = JSON.parse(text);
     const quiz = validateQuizPayload(payload);
 
-    state.draft.loadedQuizName = `${quiz.title}${quiz.description ? ` - ${quiz.description}` : ""}`;
-    state.questions = quiz.questions;
-    replaceQuestionEditors(quiz.questions);
-    updateFileStatus();
+    applyLoadedQuiz(quiz, "file");
     elements.setupMessage.textContent = `${quiz.title} loaded with ${quiz.questions.length} questions.`;
     saveState();
   } catch (error) {
@@ -413,6 +496,7 @@ async function loadQuizFromSelectedFile() {
 function clearQuestions() {
   state.draft.loadedQuizName = "";
   state.questions = [];
+  elements.quizSourceSelect.value = "";
   elements.quizFileInput.value = "";
   replaceQuestionEditors([]);
   updateFileStatus();
@@ -691,6 +775,7 @@ function resetGame() {
   state.game = null;
   elements.playerNames.value = "";
   elements.teamSize.value = 2;
+  elements.quizSourceSelect.value = "";
   elements.quizFileInput.value = "";
   elements.setupMessage.textContent = "";
   replaceQuestionEditors([]);
@@ -929,11 +1014,12 @@ elements.generateTeamsBtn.addEventListener("click", () => {
 
 elements.addQuestionBtn.addEventListener("click", () => {
   state.draft.loadedQuizName = "";
+  elements.quizSourceSelect.value = "";
   addQuestionEditor();
   updateFileStatus();
   persistSetupDraft();
 });
-elements.loadFileBtn.addEventListener("click", loadQuizFromSelectedFile);
+elements.loadSourceBtn.addEventListener("click", loadSelectedQuizSource);
 elements.clearQuestionsBtn.addEventListener("click", clearQuestions);
 elements.startGameBtn.addEventListener("click", startGame);
 elements.resetGameBtn.addEventListener("click", resetGame);
@@ -945,11 +1031,23 @@ elements.nextQuestionBtn.addEventListener("click", advanceToNextQuestion);
 elements.soundToggleBtn.addEventListener("click", toggleSound);
 elements.playerNames.addEventListener("input", persistSetupDraft);
 elements.teamSize.addEventListener("input", persistSetupDraft);
+elements.quizSourceSelect.addEventListener("change", () => {
+  if (elements.quizSourceSelect.value === FILE_SOURCE_VALUE) {
+    elements.quizFileInput.click();
+  }
+});
 elements.quizFileInput.addEventListener("change", () => {
   const [file] = elements.quizFileInput.files || [];
-  elements.fileStatus.textContent = file
-    ? `Selected file: ${file.name}`
-    : "Use any quiz JSON file. Sample files already exist in the `question-packs` folder.";
+  if (!file) {
+    populateBuiltInPackOptions();
+    updateFileStatus();
+    return;
+  }
+
+  populateBuiltInPackOptions(file.name);
+  elements.quizSourceSelect.value = FILE_SOURCE_VALUE;
+  updateFileStatus();
+  elements.setupMessage.textContent = `Selected ${file.name}. Click Load quiz to import it.`;
 });
 document.addEventListener("keydown", handleKeyboardShortcuts);
 
@@ -960,6 +1058,7 @@ function hydrateSetupFromState() {
 
   elements.playerNames.value = state.draft.playerNames || "";
   elements.teamSize.value = String(state.draft.teamSize || 2);
+  populateBuiltInPackOptions();
   replaceQuestionEditors(state.questions);
   updateFileStatus();
 }
@@ -967,6 +1066,7 @@ function hydrateSetupFromState() {
 function bootstrap() {
   loadState();
   preloadSounds();
+  populateBuiltInPackOptions();
   hydrateSetupFromState();
   render();
 }

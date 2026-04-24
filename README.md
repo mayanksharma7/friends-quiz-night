@@ -8,6 +8,7 @@ Friends Quiz Night is a browser-based quizmaster app for running a team quiz on 
 
 - creates random teams from a list of player names
 - lets you rename teams before starting
+- loads built-in quiz packs from the repo
 - loads quiz questions from a JSON file
 - runs the game round by round on one screen
 - keeps score and shows a live leaderboard
@@ -66,7 +67,7 @@ Rules:
 - each question should have `prompt`, `hint`, and `answer`
 - `prompt` and `answer` should not be empty
 
-Sample files are in [question-packs](./question-packs).
+Sample files are in [question-packs](./question-packs), and the app can load them directly from the built-in pack picker.
 
 ## Sounds
 
@@ -92,6 +93,12 @@ node ./scripts/generate-sound-manifest.mjs
 ```
 
 This updates [sounds/sound-manifest.js](./sounds/sound-manifest.js).
+
+Built-in quiz packs use a generated manifest too:
+
+```bash
+npm run packs
+```
 
 ## Save and resume
 

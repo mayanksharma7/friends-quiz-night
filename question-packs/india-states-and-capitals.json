@@ -1,257 +1,57 @@
 {
   "id": "india-states-and-capitals",
   "title": "India States and Capitals",
-  "description": "A geography round focused on Indian states, capitals, union territories, and core map facts.",
+  "description": "A mixed India capitals round with states, union territories, reverse clues, and a few administrative twists.",
   "questions": [
-    {
-      "prompt": "What is the capital of Rajasthan?",
-      "hint": "It is known as the Pink City.",
-      "answer": "Jaipur"
-    },
-    {
-      "prompt": "What is the capital of Gujarat?",
-      "hint": "It is a planned city named after Mahatma Gandhi.",
-      "answer": "Gandhinagar"
-    },
-    {
-      "prompt": "What is the capital of Maharashtra?",
-      "hint": "It is also India's financial capital.",
-      "answer": "Mumbai"
-    },
-    {
-      "prompt": "What is the capital of Karnataka?",
-      "hint": "It is known as India's Silicon Valley.",
-      "answer": "Bengaluru"
-    },
-    {
-      "prompt": "What is the capital of Tamil Nadu?",
-      "hint": "It was formerly called Madras.",
-      "answer": "Chennai"
-    },
-    {
-      "prompt": "What is the capital of Kerala?",
-      "hint": "It starts with T and is on the southwest coast.",
-      "answer": "Thiruvananthapuram"
-    },
-    {
-      "prompt": "What is the capital of Telangana?",
-      "hint": "It is famous for Charminar.",
-      "answer": "Hyderabad"
-    },
-    {
-      "prompt": "What is the capital of West Bengal?",
-      "hint": "It was the capital of British India before Delhi.",
-      "answer": "Kolkata"
-    },
-    {
-      "prompt": "What is the capital of Odisha?",
-      "hint": "It is known for the Lingaraj Temple.",
-      "answer": "Bhubaneswar"
-    },
-    {
-      "prompt": "What is the capital of Bihar?",
-      "hint": "It lies on the banks of the Ganga.",
-      "answer": "Patna"
-    },
-    {
-      "prompt": "What is the capital of Jharkhand?",
-      "hint": "It shares its first letter with Ranchi Trophy's namesake city.",
-      "answer": "Ranchi"
-    },
-    {
-      "prompt": "What is the capital of Chhattisgarh?",
-      "hint": "It starts with R and is a growing central Indian city.",
-      "answer": "Raipur"
-    },
-    {
-      "prompt": "What is the capital of Madhya Pradesh?",
-      "hint": "It is famous for its lakes.",
-      "answer": "Bhopal"
-    },
-    {
-      "prompt": "What is the capital of Uttar Pradesh?",
-      "hint": "It is also known for its kebabs and tehzeeb.",
-      "answer": "Lucknow"
-    },
-    {
-      "prompt": "What is the capital of Uttarakhand?",
-      "hint": "It is a hill city and also a well-known school town.",
-      "answer": "Dehradun"
-    },
-    {
-      "prompt": "What is the capital of Himachal Pradesh?",
-      "hint": "It was once the summer capital of British India.",
-      "answer": "Shimla"
-    },
-    {
-      "prompt": "What is the capital of Punjab?",
-      "hint": "It is a planned city shared with Haryana.",
-      "answer": "Chandigarh"
-    },
-    {
-      "prompt": "What is the capital of Haryana?",
-      "hint": "It shares its capital with Punjab.",
-      "answer": "Chandigarh"
-    },
-    {
-      "prompt": "What is the capital of Assam?",
-      "hint": "It is famous for the Kamakhya Temple.",
-      "answer": "Dispur"
-    },
-    {
-      "prompt": "What is the capital of Meghalaya?",
-      "hint": "It is known for heavy rainfall and hill scenery.",
-      "answer": "Shillong"
-    },
-    {
-      "prompt": "What is the capital of Arunachal Pradesh?",
-      "hint": "Its name begins with I.",
-      "answer": "Itanagar"
-    },
-    {
-      "prompt": "What is the capital of Manipur?",
-      "hint": "It starts with I and is a valley city.",
-      "answer": "Imphal"
-    },
-    {
-      "prompt": "What is the capital of Mizoram?",
-      "hint": "It starts with A.",
-      "answer": "Aizawl"
-    },
-    {
-      "prompt": "What is the capital of Tripura?",
-      "hint": "It starts with A and is near Bangladesh.",
-      "answer": "Agartala"
-    },
-    {
-      "prompt": "What is the capital of Nagaland?",
-      "hint": "Its name begins with K.",
-      "answer": "Kohima"
-    },
-    {
-      "prompt": "What is the capital of Sikkim?",
-      "hint": "It starts with G and is a popular hill destination.",
-      "answer": "Gangtok"
-    },
-    {
-      "prompt": "What is the capital of Goa?",
-      "hint": "It is also called Panaji.",
-      "answer": "Panaji"
-    },
-    {
-      "prompt": "What is the capital of India?",
-      "hint": "It is home to Parliament and India Gate.",
-      "answer": "New Delhi"
-    },
-    {
-      "prompt": "What is the capital of the Union Territory of Andaman and Nicobar Islands?",
-      "hint": "It starts with P.",
-      "answer": "Port Blair"
-    },
-    {
-      "prompt": "What is the capital of Lakshadweep?",
-      "hint": "It starts with K.",
-      "answer": "Kavaratti"
-    },
-    {
-      "prompt": "What is the capital of Puducherry?",
-      "hint": "It has the same name as the union territory.",
-      "answer": "Puducherry"
-    },
-    {
-      "prompt": "What is the winter capital of Jammu and Kashmir?",
-      "hint": "Its name starts with J.",
-      "answer": "Jammu"
-    },
-    {
-      "prompt": "What is the summer capital of Jammu and Kashmir?",
-      "hint": "It is famous for Dal Lake.",
-      "answer": "Srinagar"
-    },
-    {
-      "prompt": "Which city serves as the headquarters of the Union Territory of Ladakh?",
-      "hint": "It is a high-altitude city beginning with L.",
-      "answer": "Leh"
-    },
-    {
-      "prompt": "What is the capital of the Union Territory of Chandigarh?",
-      "hint": "It has the same name as the territory.",
-      "answer": "Chandigarh"
-    },
-    {
-      "prompt": "What is the capital of the Union Territory of Dadra and Nagar Haveli and Daman and Diu?",
-      "hint": "It is one of the two names in the union territory title.",
-      "answer": "Daman"
-    },
-    {
-      "prompt": "Which is the largest state in India by area?",
-      "hint": "It is home to the Thar Desert.",
-      "answer": "Rajasthan"
-    },
-    {
-      "prompt": "Which is the smallest state in India by area?",
-      "hint": "It is a famous beach destination.",
-      "answer": "Goa"
-    },
-    {
-      "prompt": "Which Indian state has the longest coastline?",
-      "hint": "Its capital is Gandhinagar.",
-      "answer": "Gujarat"
-    },
-    {
-      "prompt": "Which Indian state is known as the Land of Five Rivers?",
-      "hint": "Its capital is Chandigarh.",
-      "answer": "Punjab"
-    },
-    {
-      "prompt": "Which Indian state is the tea-garden state of the northeast and home to Kaziranga?",
-      "hint": "Its capital is Dispur.",
-      "answer": "Assam"
-    },
-    {
-      "prompt": "Which Indian state is called God's Own Country?",
-      "hint": "Its capital is Thiruvananthapuram.",
-      "answer": "Kerala"
-    },
-    {
-      "prompt": "Which state is home to the city of Jodhpur?",
-      "hint": "Its capital is Jaipur.",
-      "answer": "Rajasthan"
-    },
-    {
-      "prompt": "Which state is home to the city of Mysuru?",
-      "hint": "Its capital is Bengaluru.",
-      "answer": "Karnataka"
-    },
-    {
-      "prompt": "Which Indian river is often called the lifeline of Madhya Pradesh and Gujarat?",
-      "hint": "It flows west into the Arabian Sea.",
-      "answer": "Narmada"
-    },
-    {
-      "prompt": "Which plateau covers much of peninsular India?",
-      "hint": "Its name starts with D.",
-      "answer": "Deccan Plateau"
-    },
-    {
-      "prompt": "Which mountain range runs along the western edge of peninsular India?",
-      "hint": "It is also called Sahyadri.",
-      "answer": "Western Ghats"
-    },
-    {
-      "prompt": "Which sea lies to the west of India?",
-      "hint": "Mumbai is on its coast.",
-      "answer": "Arabian Sea"
-    },
-    {
-      "prompt": "Which bay lies to the east of India?",
-      "hint": "Chennai is on its coast.",
-      "answer": "Bay of Bengal"
-    },
-    {
-      "prompt": "Which is the longest river flowing entirely within India?",
-      "hint": "It rises in Maharashtra and flows east.",
-      "answer": "Godavari"
-    }
+    { "prompt": "What is the capital of Arunachal Pradesh?", "hint": "It lies in the Himalayan foothills and begins with I.", "answer": "Itanagar" },
+    { "prompt": "Dispur is the capital of which Indian state?", "hint": "Its largest city is Guwahati.", "answer": "Assam" },
+    { "prompt": "What is the capital of Chhattisgarh?", "hint": "It is also one of India's fastest-growing planned cities.", "answer": "Raipur" },
+    { "prompt": "Panaji is the capital of which state?", "hint": "It was a Portuguese territory until 1961.", "answer": "Goa" },
+    { "prompt": "What is the capital of Himachal Pradesh?", "hint": "It served as the summer capital of British India.", "answer": "Shimla" },
+    { "prompt": "Ranchi is the capital of which state?", "hint": "It was carved out of Bihar in 2000.", "answer": "Jharkhand" },
+    { "prompt": "What is the capital of Kerala?", "hint": "Its old colonial name was Trivandrum.", "answer": "Thiruvananthapuram" },
+    { "prompt": "Bhopal is the capital of which Indian state?", "hint": "Its largest city is Indore.", "answer": "Madhya Pradesh" },
+    { "prompt": "What is the capital of Manipur?", "hint": "It lies in a valley in the northeast.", "answer": "Imphal" },
+    { "prompt": "Shillong is the capital of which Indian state?", "hint": "It is often called the Scotland of the East.", "answer": "Meghalaya" },
+    { "prompt": "What is the capital of Mizoram?", "hint": "It begins with A and is a hill city.", "answer": "Aizawl" },
+    { "prompt": "Kohima is the capital of which state?", "hint": "Its neighboring major city is Dimapur.", "answer": "Nagaland" },
+    { "prompt": "What is the capital of Odisha?", "hint": "It is named after a temple city and is known for planned sectors.", "answer": "Bhubaneswar" },
+    { "prompt": "Chandigarh serves as the capital of which state in addition to being a union territory and shared capital with Haryana?", "hint": "Its major holy city is Amritsar.", "answer": "Punjab" },
+    { "prompt": "What is the capital of Sikkim?", "hint": "It lies on a ridge above the Teesta valley.", "answer": "Gangtok" },
+    { "prompt": "Agartala is the capital of which state?", "hint": "It borders Bangladesh on three sides.", "answer": "Tripura" },
+    { "prompt": "What is the capital of Uttarakhand in winter?", "hint": "Its summer capital is Gairsain.", "answer": "Dehradun" },
+    { "prompt": "Lucknow is the capital of which Indian state?", "hint": "The state includes Varanasi, Prayagraj, and Kanpur.", "answer": "Uttar Pradesh" },
+    { "prompt": "What is the capital of West Bengal?", "hint": "It was once the capital of British India.", "answer": "Kolkata" },
+    { "prompt": "Gandhinagar is the capital of which state?", "hint": "Its largest city is Ahmedabad.", "answer": "Gujarat" },
+    { "prompt": "What is the capital of Haryana?", "hint": "It is shared with Punjab and is a union territory too.", "answer": "Chandigarh" },
+    { "prompt": "Bengaluru is the capital of which Indian state?", "hint": "Its old name was Mysore State.", "answer": "Karnataka" },
+    { "prompt": "What is the capital of Bihar?", "hint": "It is one of the oldest continuously inhabited places in India.", "answer": "Patna" },
+    { "prompt": "Jaipur is the capital of which state?", "hint": "It is known as the Pink City.", "answer": "Rajasthan" },
+    { "prompt": "What is the capital of Maharashtra?", "hint": "It is also India's financial capital.", "answer": "Mumbai" },
+    { "prompt": "Amaravati is associated with the capital plans of which state?", "hint": "Its high court is at Amaravati and its largest city is Visakhapatnam.", "answer": "Andhra Pradesh" },
+    { "prompt": "What is the capital of Nagaland?", "hint": "The famous World War II battle there took place nearby.", "answer": "Kohima" },
+    { "prompt": "Hyderabad serves as the capital of which state as of 2026?", "hint": "It was a shared capital for a time after bifurcation.", "answer": "Telangana" },
+    { "prompt": "What is the capital of Tamil Nadu?", "hint": "It was formerly called Madras.", "answer": "Chennai" },
+    { "prompt": "Srinagar is the summer capital of which union territory?", "hint": "Its winter capital is Jammu.", "answer": "Jammu and Kashmir" },
+    { "prompt": "What is the capital of Andhra Pradesh?", "hint": "It is located on the banks of the Krishna River region.", "answer": "Amaravati" },
+    { "prompt": "Leh is the headquarters of which union territory?", "hint": "Kargil is the other district centre in the same UT.", "answer": "Ladakh" },
+    { "prompt": "What is the capital of Meghalaya?", "hint": "It is a hill station with a famous peak nearby.", "answer": "Shillong" },
+    { "prompt": "Port Blair is the capital of which union territory?", "hint": "It is known for the Cellular Jail.", "answer": "Andaman and Nicobar Islands" },
+    { "prompt": "What is the capital of Tripura?", "hint": "Its name begins with A.", "answer": "Agartala" },
+    { "prompt": "Daman is part of the capital arrangement of which union territory?", "hint": "The UT name contains Daman, Diu, Dadra, and Nagar Haveli.", "answer": "Dadra and Nagar Haveli and Daman and Diu" },
+    { "prompt": "What is the capital of Mizoram?", "hint": "It begins with A and ends with wl.", "answer": "Aizawl" },
+    { "prompt": "Kavaratti is the capital of which union territory?", "hint": "It is India's smallest UT by area.", "answer": "Lakshadweep" },
+    { "prompt": "What is the capital of Sikkim?", "hint": "It is the state's largest urban centre.", "answer": "Gangtok" },
+    { "prompt": "Puducherry is the capital of which union territory?", "hint": "It was once known in English as Pondicherry.", "answer": "Puducherry" },
+    { "prompt": "What is the capital of Rajasthan?", "hint": "It is part of the tourist Golden Triangle with Delhi and Agra.", "answer": "Jaipur" },
+    { "prompt": "New Delhi is the capital of India and of which union territory?", "hint": "Its full current name begins with National Capital Territory.", "answer": "Delhi or National Capital Territory of Delhi" },
+    { "prompt": "What is the capital of Assam?", "hint": "It lies within the Guwahati metropolitan region.", "answer": "Dispur" },
+    { "prompt": "Bhubaneswar is the capital of which state?", "hint": "Its old imperial city nearby is Cuttack.", "answer": "Odisha" },
+    { "prompt": "What is the capital of Arunachal Pradesh?", "hint": "It begins with I and ends with nagar.", "answer": "Itanagar" },
+    { "prompt": "Dehradun serves as the winter capital of which state?", "hint": "The state also includes Nainital, Haridwar, and Kedarnath.", "answer": "Uttarakhand" },
+    { "prompt": "What is the capital of Punjab?", "hint": "It is a planned city designed by Le Corbusier.", "answer": "Chandigarh" },
+    { "prompt": "Panaji is the capital of which state?", "hint": "It is famous for beaches, churches, and Lusophone heritage.", "answer": "Goa" },
+    { "prompt": "What is the capital of Jharkhand?", "hint": "It begins with R and was once a center for heavy engineering nearby.", "answer": "Ranchi" },
+    { "prompt": "Gangtok is the capital of which Himalayan state?", "hint": "It borders Bhutan, Nepal, and Tibet.", "answer": "Sikkim" }
   ]
 }

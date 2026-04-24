@@ -2,7 +2,9 @@
   "name": "friends-quiz-night",
   "private": true,
   "scripts": {
+    "packs": "node ./scripts/generate-question-pack-manifest.mjs",
     "sounds": "node ./scripts/generate-sound-manifest.mjs",
+    "manifests": "node ./scripts/generate-question-pack-manifest.mjs && node ./scripts/generate-sound-manifest.mjs",
     "check": "node --check app.js"
   }
 }

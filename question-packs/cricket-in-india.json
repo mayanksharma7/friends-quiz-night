@@ -1,257 +1,57 @@
 {
   "id": "cricket-in-india",
   "title": "Cricket in India",
-  "description": "A cricket round with India-focused moments, captains, tournaments, venues, and iconic achievements.",
+  "description": "A tougher India-focused cricket round with iconic records, venues, domestic cricket, and defining match moments.",
   "questions": [
-    {
-      "prompt": "Who captained India to the 1983 Cricket World Cup title?",
-      "hint": "He was a great all-rounder from Haryana.",
-      "answer": "Kapil Dev"
-    },
-    {
-      "prompt": "Who captained India to the 2011 Cricket World Cup title?",
-      "hint": "He finished the final with a famous six.",
-      "answer": "M. S. Dhoni"
-    },
-    {
-      "prompt": "Which Indian cricketer is known as the Master Blaster?",
-      "hint": "He made his debut as a teenager in 1989.",
-      "answer": "Sachin Tendulkar"
-    },
-    {
-      "prompt": "Which stadium in Ahmedabad is the largest cricket stadium in India?",
-      "hint": "It is named after a famous Indian leader.",
-      "answer": "Narendra Modi Stadium"
-    },
-    {
-      "prompt": "Which Indian bowler took all 10 wickets in a Test innings against Pakistan in 1999?",
-      "hint": "He was nicknamed Jumbo.",
-      "answer": "Anil Kumble"
-    },
-    {
-      "prompt": "Which Indian cricketer is called the Prince of Kolkata or Dada?",
-      "hint": "He later became BCCI president.",
-      "answer": "Sourav Ganguly"
-    },
-    {
-      "prompt": "Who was the first Indian captain to win the T20 World Cup?",
-      "hint": "It happened in 2007.",
-      "answer": "M. S. Dhoni"
-    },
-    {
-      "prompt": "Which Indian batter scored the first double century in men's ODI cricket?",
-      "hint": "It happened against South Africa in Gwalior.",
-      "answer": "Sachin Tendulkar"
-    },
-    {
-      "prompt": "Which IPL team is based in Chennai?",
-      "hint": "Its captain for many years was M. S. Dhoni.",
-      "answer": "Chennai Super Kings"
-    },
-    {
-      "prompt": "Which IPL team is based in Mumbai?",
-      "hint": "It has won the title multiple times.",
-      "answer": "Mumbai Indians"
-    },
-    {
-      "prompt": "Who is known as the Wall of Indian cricket?",
-      "hint": "He later coached India.",
-      "answer": "Rahul Dravid"
-    },
-    {
-      "prompt": "Which Indian cricketer is famously known as the Hitman?",
-      "hint": "He has scored multiple ODI double hundreds.",
-      "answer": "Rohit Sharma"
-    },
-    {
-      "prompt": "Who led India in the famous 2001 Kolkata Test comeback against Australia?",
-      "hint": "He was known for waving his shirt at Lord's later that year.",
-      "answer": "Sourav Ganguly"
-    },
-    {
-      "prompt": "Which two Indian batters had the historic partnership at Eden Gardens in 2001 against Australia?",
-      "hint": "One was V. V. S. Laxman.",
-      "answer": "V. V. S. Laxman and Rahul Dravid"
-    },
-    {
-      "prompt": "What is the full form of IPL?",
-      "hint": "It is India's most famous franchise T20 tournament.",
-      "answer": "Indian Premier League"
-    },
-    {
-      "prompt": "Which Indian fast bowler was known as the Sultan of Swing?",
-      "hint": "His first name is Zaheer.",
-      "answer": "Zaheer Khan"
-    },
-    {
-      "prompt": "Which Indian spinner is known for bowling the carrom ball?",
-      "hint": "His surname is Ashwin.",
-      "answer": "Ravichandran Ashwin"
-    },
-    {
-      "prompt": "Who was the first Indian to score a triple century in Test cricket?",
-      "hint": "He was from Multan fame's generation and from Punjab.",
-      "answer": "Virender Sehwag"
-    },
-    {
-      "prompt": "Which Indian batter is known as Mr. 360 in modern T20 circles?",
-      "hint": "His first name is Suryakumar.",
-      "answer": "Suryakumar Yadav"
-    },
-    {
-      "prompt": "Which Indian city is home to Eden Gardens?",
-      "hint": "It is the capital of West Bengal.",
-      "answer": "Kolkata"
-    },
-    {
-      "prompt": "Which Indian cricketer is known as King Kohli?",
-      "hint": "He captained India in all formats.",
-      "answer": "Virat Kohli"
-    },
-    {
-      "prompt": "Which trophy is awarded to the winner of the Ranji tournament?",
-      "hint": "It is India's premier domestic first-class competition.",
-      "answer": "Ranji Trophy"
-    },
-    {
-      "prompt": "Which Indian all-rounder was called the Haryana Hurricane?",
-      "hint": "He captained the 1983 World Cup team.",
-      "answer": "Kapil Dev"
-    },
-    {
-      "prompt": "Who hit the winning six for India in the 2011 World Cup final?",
-      "hint": "He was India's captain in that match.",
-      "answer": "M. S. Dhoni"
-    },
-    {
-      "prompt": "Who is known as the Little Master of Indian cricket from an earlier generation?",
-      "hint": "His surname is Gavaskar.",
-      "answer": "Sunil Gavaskar"
-    },
-    {
-      "prompt": "Which Indian all-rounder was nicknamed Yuvi?",
-      "hint": "He was Player of the Tournament in the 2011 World Cup.",
-      "answer": "Yuvraj Singh"
-    },
-    {
-      "prompt": "Which Indian spinner from Tamil Nadu was known as Venkatapathy in full name and played in the 1983 World Cup final?",
-      "hint": "His surname is Raju.",
-      "answer": "R. Venkataraghavan"
-    },
-    {
-      "prompt": "Which Indian cricketer scored 183 against Sri Lanka in the 2003 World Cup?",
-      "hint": "He opened the innings with a fearless style.",
-      "answer": "Sourav Ganguly"
-    },
-    {
-      "prompt": "Which Indian batter made 281 in the Kolkata Test against Australia in 2001?",
-      "hint": "His initials are V. V. S.",
-      "answer": "V. V. S. Laxman"
-    },
-    {
-      "prompt": "What does LBW stand for in cricket?",
-      "hint": "It refers to a batter being out with the pad in front.",
-      "answer": "Leg Before Wicket"
-    },
-    {
-      "prompt": "Which Indian city is home to the Wankhede Stadium?",
-      "hint": "It is Maharashtra's capital.",
-      "answer": "Mumbai"
-    },
-    {
-      "prompt": "Which Indian city is home to M. A. Chidambaram Stadium?",
-      "hint": "It is often called Chepauk.",
-      "answer": "Chennai"
-    },
-    {
-      "prompt": "Which city is associated with the M. Chinnaswamy Stadium?",
-      "hint": "It is the capital of Karnataka.",
-      "answer": "Bengaluru"
-    },
-    {
-      "prompt": "Which Indian state team does the domestic giant Mumbai represent in first-class cricket?",
-      "hint": "Its capital is Mumbai too.",
-      "answer": "Maharashtra"
-    },
-    {
-      "prompt": "Which Indian batter is known for the phrase 'The Nawab of Najafgarh'?",
-      "hint": "He was an explosive opener.",
-      "answer": "Virender Sehwag"
-    },
-    {
-      "prompt": "Which Indian cricketer has the nickname Jaddu?",
-      "hint": "He is a left-arm spinning all-rounder.",
-      "answer": "Ravindra Jadeja"
-    },
-    {
-      "prompt": "Which Indian pace bowler was nicknamed Bhuvi?",
-      "hint": "His surname is Kumar.",
-      "answer": "Bhuvneshwar Kumar"
-    },
-    {
-      "prompt": "Which Indian player is famous for the Desert Storm innings in Sharjah?",
-      "hint": "He is the Master Blaster.",
-      "answer": "Sachin Tendulkar"
-    },
-    {
-      "prompt": "Which Indian captain lifted the Champions Trophy jointly with Sri Lanka in 2002?",
-      "hint": "He is called Dada.",
-      "answer": "Sourav Ganguly"
-    },
-    {
-      "prompt": "Which Indian cricketer won the 1985 World Championship of Cricket Player of the Series award?",
-      "hint": "He later became captain of India.",
-      "answer": "Ravi Shastri"
-    },
-    {
-      "prompt": "Which left-handed Indian opener from Delhi was nicknamed Gabbar?",
-      "hint": "His surname is Dhawan.",
-      "answer": "Shikhar Dhawan"
-    },
-    {
-      "prompt": "Which Indian wicketkeeper was nicknamed Mahi?",
-      "hint": "He captained India to three major ICC titles.",
-      "answer": "M. S. Dhoni"
-    },
-    {
-      "prompt": "Which Indian spinner from the 1970s and 1980s was known as one half of the famous spin quartet along with Bedi, Chandra, and Venkataraghavan?",
-      "hint": "His surname is Prasanna.",
-      "answer": "Erapalli Prasanna"
-    },
-    {
-      "prompt": "What is the standard number of players in a cricket team on the field?",
-      "hint": "Think of football plus one.",
-      "answer": "11"
-    },
-    {
-      "prompt": "Which color ball is traditionally used in day-night limited-overs cricket?",
-      "hint": "It is easier to see under lights than the red one.",
-      "answer": "White ball"
-    },
-    {
-      "prompt": "Which Indian city hosted the 2011 World Cup final that India won?",
-      "hint": "The match was at Wankhede Stadium.",
-      "answer": "Mumbai"
-    },
-    {
-      "prompt": "Which award is given to the top-performing player in an IPL season?",
-      "hint": "It is named after the most valuable player concept.",
-      "answer": "Most Valuable Player"
-    },
-    {
-      "prompt": "Which Indian player was called the Turbanator?",
-      "hint": "He was an off-spinner from Punjab.",
-      "answer": "Harbhajan Singh"
-    },
-    {
-      "prompt": "Which Indian batter was known as Dashing and was famous for his cover drives, with the initials M. A. K.?",
-      "hint": "His first name is Mohammad.",
-      "answer": "Mohammad Azharuddin"
-    },
-    {
-      "prompt": "Which Indian pacer took a hat-trick in the 2019 World Cup against Afghanistan?",
-      "hint": "His surname is Shami.",
-      "answer": "Mohammed Shami"
-    }
+    { "prompt": "Which Indian batter scored 281 in the 2001 Kolkata Test against Australia?", "hint": "He was known for elegant wristwork and batted at No. 3 in that innings.", "answer": "V. V. S. Laxman" },
+    { "prompt": "Which Indian bowler took all 10 wickets in a Test innings against Pakistan in Delhi in 1999?", "hint": "He was nicknamed Jumbo.", "answer": "Anil Kumble" },
+    { "prompt": "At which ground did India win the inaugural T20 World Cup final in 2007?", "hint": "The venue was in Johannesburg.", "answer": "Wanderers Stadium" },
+    { "prompt": "Which Indian batter scored a century at Lord's in the 2014 Test that India won?", "hint": "He later captained India to a famous series win in Australia.", "answer": "Ajinkya Rahane" },
+    { "prompt": "Who was the captain of India when they won the ICC Champions Trophy in 2013?", "hint": "He also captained India to the 2007 T20 World Cup and 2011 ODI World Cup.", "answer": "M. S. Dhoni" },
+    { "prompt": "Which Indian city is home to the Wankhede Stadium?", "hint": "It is the capital of Maharashtra.", "answer": "Mumbai" },
+    { "prompt": "Who scored the winning runs for India in the 2002 NatWest final at Lord's?", "hint": "He later became one of India's best limited-overs all-rounders.", "answer": "Mohammad Kaif" },
+    { "prompt": "Which Indian opener scored a triple century against Pakistan in Multan in 2004?", "hint": "He was famous for fearless strokeplay.", "answer": "Virender Sehwag" },
+    { "prompt": "What is the domestic first-class championship of India called?", "hint": "It is named after a former ruler of Nawanagar.", "answer": "Ranji Trophy" },
+    { "prompt": "Which India spinner was called the Turbanator?", "hint": "He dismissed Ricky Ponting many times.", "answer": "Harbhajan Singh" },
+    { "prompt": "Who was India's coach during the 2011 ODI World Cup win?", "hint": "He was a South African batter with the nickname Gary.", "answer": "Gary Kirsten" },
+    { "prompt": "Which Indian bowler took a hat-trick in the 2019 World Cup against Afghanistan?", "hint": "He is a fast bowler known for yorkers.", "answer": "Mohammed Shami" },
+    { "prompt": "Which Indian cricketer became the first man to score a double century in ODI cricket?", "hint": "He achieved it in Gwalior against South Africa.", "answer": "Sachin Tendulkar" },
+    { "prompt": "Which stadium in Ahmedabad hosted the 2023 ODI World Cup final?", "hint": "It is the largest cricket stadium in the world.", "answer": "Narendra Modi Stadium" },
+    { "prompt": "Who captained India in the famous tied Test against Australia at Madras in 1986?", "hint": "He was a world-class all-rounder from Kapurthala.", "answer": "Kapil Dev" },
+    { "prompt": "Which Indian all-rounder was Player of the Tournament in the 2011 ODI World Cup?", "hint": "He fought cancer soon after that tournament.", "answer": "Yuvraj Singh" },
+    { "prompt": "Which Indian batter scored 183 against Sri Lanka in the 2005 Jaipur ODI, then his highest ODI score?", "hint": "He later became one of India's greatest captains.", "answer": "M. S. Dhoni" },
+    { "prompt": "Which city is home to Eden Gardens?", "hint": "It is sometimes called the City of Joy.", "answer": "Kolkata" },
+    { "prompt": "Who was the first Indian to take 500 wickets in Test cricket?", "hint": "He reached the mark against England in Mohali in 2008.", "answer": "Anil Kumble" },
+    { "prompt": "Which Indian batter made 264, the highest individual ODI score by a man as of 2026?", "hint": "He is nicknamed the Hitman.", "answer": "Rohit Sharma" },
+    { "prompt": "What is the name of India's premier domestic one-day tournament?", "hint": "It is named after the first Indian Test captain.", "answer": "Vijay Hazare Trophy" },
+    { "prompt": "Which Indian batter was called the Wall?", "hint": "He later became head coach of India.", "answer": "Rahul Dravid" },
+    { "prompt": "Who hit the winning six in the 2011 ODI World Cup final?", "hint": "He was India's captain that night in Mumbai.", "answer": "M. S. Dhoni" },
+    { "prompt": "Which Indian fast bowler took 6 for 23 in the 2003 World Cup match against Pakistan at Centurion?", "hint": "He shared his first name with a famous tennis player.", "answer": "Ashish Nehra" },
+    { "prompt": "Which IPL franchise was suspended for two seasons along with Chennai Super Kings?", "hint": "It was the Pune-based team owned by Sahara.", "answer": "Rajasthan Royals" },
+    { "prompt": "Which Indian spinner dismissed Ponting, Hayden, Gilchrist, and others in the 2001 Border-Gavaskar series?", "hint": "He took a hat-trick in the Kolkata Test.", "answer": "Harbhajan Singh" },
+    { "prompt": "Which Indian cricketer was known as the Little Master before Sachin was nicknamed the Master Blaster?", "hint": "He was Sunil Gavaskar.", "answer": "Sunil Gavaskar" },
+    { "prompt": "Which Indian batter was the first to score centuries in all three formats of international cricket?", "hint": "He is from Delhi and captained India in all formats.", "answer": "Virat Kohli" },
+    { "prompt": "Who captained India during the 1985 Benson and Hedges World Championship of Cricket win?", "hint": "The title was won in Australia.", "answer": "Sunil Gavaskar" },
+    { "prompt": "Which ground in Chennai was formerly known as the Madras Cricket Club Ground?", "hint": "It is commonly called Chepauk.", "answer": "M. A. Chidambaram Stadium" },
+    { "prompt": "Who was the first Indian woman to score a double century in ODI cricket?", "hint": "She captained India and is from Hyderabad.", "answer": "Mithali Raj" },
+    { "prompt": "Which Indian all-rounder scored 175 not out against Zimbabwe in the 1983 World Cup?", "hint": "The innings came at Tunbridge Wells.", "answer": "Kapil Dev" },
+    { "prompt": "Which Indian fast bowler is nicknamed Bhuvi?", "hint": "He is known for swing with the new ball.", "answer": "Bhuvneshwar Kumar" },
+    { "prompt": "Which Indian state team has won the most Ranji Trophy titles?", "hint": "Its home city includes the Wankhede Stadium.", "answer": "Mumbai" },
+    { "prompt": "Who was the first Indian batter to score a century in T20 Internationals?", "hint": "He did it against South Africa in Johannesburg in 2010.", "answer": "Suresh Raina" },
+    { "prompt": "Which Indian batter holds the record for the fastest ODI hundred by an Indian as of 2026?", "hint": "He scored it off 52 balls against Australia in Jaipur.", "answer": "Virat Kohli" },
+    { "prompt": "Which Indian batter won the Orange Cap in the very first IPL season in 2008?", "hint": "He played for Kings XI Punjab.", "answer": "Shaun Marsh" },
+    { "prompt": "Who led India to their first Test series win in Australia in 2018-19?", "hint": "He is often called King Kohli.", "answer": "Virat Kohli" },
+    { "prompt": "Which Indian seamer won Player of the Series when India beat Australia 2-1 in the 2017 Border-Gavaskar Trophy at home?", "hint": "He is known for his upright seam position and currently also serves as a commentator at times.", "answer": "Umesh Yadav" },
+    { "prompt": "What is the name of the domestic T20 tournament played among Indian state teams?", "hint": "It is named after a former BCCI secretary.", "answer": "Syed Mushtaq Ali Trophy" },
+    { "prompt": "Which Indian opener scored 146 at The Oval in 1979 while chasing 438?", "hint": "He was one of the greatest Test openers of all time.", "answer": "Sunil Gavaskar" },
+    { "prompt": "Who took the catch to dismiss Misbah-ul-Haq at the end of the 2007 T20 World Cup final?", "hint": "He was fielding at short fine leg.", "answer": "S. Sreesanth" },
+    { "prompt": "Which Indian spinner became the fastest Indian to 250 Test wickets in terms of innings?", "hint": "He is an off-spinner from Chennai who bowls the carrom ball too.", "answer": "Ravichandran Ashwin" },
+    { "prompt": "Which Indian batter was the top scorer for India in the 1983 World Cup final?", "hint": "He made 38 at Lord's.", "answer": "Krishnamachari Srikkanth" },
+    { "prompt": "Which cricketer captained Chennai Super Kings to five IPL titles by 2023?", "hint": "He is known as Captain Cool.", "answer": "M. S. Dhoni" },
+    { "prompt": "Which Indian seamer dismissed Brian Lara with the very first ball of a Test match in 1994 at Mohali?", "hint": "He later became a noted commentator and swing expert.", "answer": "Javagal Srinath" },
+    { "prompt": "Which Indian player was Player of the Match in the 2007 T20 World Cup final?", "hint": "He played a vital all-round role and took a catch in the deep.", "answer": "Irfan Pathan" },
+    { "prompt": "Which Indian wicketkeeper became the first from the country to score a Test double century, doing so against Pakistan in Faisalabad in 2006?", "hint": "He was known for aggressive strokeplay and often batted in the middle order.", "answer": "M. S. Dhoni" },
+    { "prompt": "Which Indian batter scored 161 at Cape Town in 1997, an innings remembered as one of India's finest overseas knocks of the era?", "hint": "He was nicknamed the Little Master and also opened the batting.", "answer": "Sachin Tendulkar" },
+    { "prompt": "Which former Indian captain is associated with the phrase 'Tiger of Patudi'?", "hint": "His initials are M. A. K.", "answer": "Mansoor Ali Khan Pataudi" }
   ]
 }
