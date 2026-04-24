@@ -316,6 +316,7 @@ select:focus {
 
 .setup-grid {
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  margin-top: 0.8rem;
   margin-bottom: 1rem;
 }
 
@@ -343,6 +344,10 @@ select:focus {
 .card h3,
 .panel h2 {
   margin-bottom: 0.2rem;
+}
+
+.setup-section-card + .setup-section-card {
+  margin-top: 1rem;
 }
 
 .setup-note {
