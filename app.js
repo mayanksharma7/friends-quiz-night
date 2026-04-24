@@ -65,7 +65,10 @@ const soundLibrary = Object.fromEntries(
   ])
 );
 
+const audioCache = new Map();
+
 let activeAudio = null;
+let soundPlaybackId = 0;
 
 function saveState() {
   localStorage.setItem(
@@ -126,6 +129,70 @@ function chooseRandomItem(items) {
   return items[Math.floor(Math.random() * items.length)];
 }
 
+function stopActiveAudio() {
+  soundPlaybackId += 1;
+
+  if (activeAudio) {
+    activeAudio.pause();
+    activeAudio.currentTime = 0;
+    activeAudio = null;
+  }
+}
+
+function getAudioTemplate(soundPath) {
+  if (!audioCache.has(soundPath)) {
+    const audio = new Audio(soundPath);
+    audio.preload = "auto";
+    audio.load();
+    audioCache.set(soundPath, audio);
+  }
+
+  return audioCache.get(soundPath);
+}
+
+function playPreparedSound(soundPath, type) {
+  const template = getAudioTemplate(soundPath);
+  const audio = new Audio(template.currentSrc || template.src || soundPath);
+  const playbackId = soundPlaybackId;
+
+  audio.preload = "auto";
+  audio.addEventListener(
+    "ended",
+    () => {
+      if (activeAudio === audio && soundPlaybackId === playbackId) {
+        activeAudio = null;
+      }
+    },
+    { once: true }
+  );
+  audio.addEventListener(
+    "error",
+    () => {
+      if (activeAudio === audio && soundPlaybackId === playbackId) {
+        activeAudio = null;
+      }
+    },
+    { once: true }
+  );
+
+  activeAudio = audio;
+  audio.play().catch((error) => {
+    if (activeAudio === audio && soundPlaybackId === playbackId) {
+      activeAudio = null;
+    }
+
+    console.warn(`Could not play ${type} sound`, error);
+  });
+}
+
+function preloadSounds() {
+  Object.values(soundLibrary)
+    .flat()
+    .forEach((soundPath) => {
+      getAudioTemplate(soundPath);
+    });
+}
+
 function playRandomSound(type) {
   if (!state.settings.soundEnabled) {
     return;
@@ -138,24 +205,17 @@ function playRandomSound(type) {
   }
 
   const soundPath = chooseRandomItem(soundOptions);
-
-  if (activeAudio) {
-    activeAudio.pause();
-    activeAudio.currentTime = 0;
-  }
-
-  activeAudio = new Audio(soundPath);
-  activeAudio.play().catch((error) => {
-    console.warn(`Could not play ${type} sound`, error);
-  });
+  stopActiveAudio();
+  playPreparedSound(soundPath, type);
 }
 
 function setSoundEnabled(isEnabled) {
   state.settings.soundEnabled = Boolean(isEnabled);
 
-  if (!state.settings.soundEnabled && activeAudio) {
-    activeAudio.pause();
-    activeAudio.currentTime = 0;
+  if (!state.settings.soundEnabled) {
+    stopActiveAudio();
+  } else {
+    preloadSounds();
   }
 
   saveState();
@@ -906,6 +966,7 @@ function hydrateSetupFromState() {
 
 function bootstrap() {
   loadState();
+  preloadSounds();
   hydrateSetupFromState();
   render();
 }
