@@ -16,19 +16,10 @@
             Build teams, load a quiz from a file, and run the whole game from one
             shared screen.
           </p>
-          <div class="hero-tags">
-            <span>Single-screen host</span>
-            <span>JSON quiz files</span>
-            <span>Live leaderboard</span>
-          </div>
         </div>
         <div class="hero-side">
           <div class="hero-badge">
-          <span id="gamePhasePill">Setup</span>
-          </div>
-          <div class="hero-card">
-            <strong>Simple loading</strong>
-            <p>Pick any quiz JSON file directly from your computer before the game starts.</p>
+            <span id="gamePhasePill">Setup</span>
           </div>
         </div>
       </header>
@@ -87,7 +78,6 @@
             <div class="file-loader-card">
               <label class="file-picker" for="quizFileInput">
                 <span class="file-picker-title">Choose quiz file</span>
-                <span class="file-picker-subtitle">Load a `.json` file with title, description, and questions.</span>
               </label>
               <input id="quizFileInput" type="file" accept=".json,application/json" />
               <div class="file-loader-actions">
@@ -136,7 +126,21 @@
             <article class="card live-card">
               <div class="panel-heading compact">
                 <div>
-                  <p class="section-kicker">Live round</p>
+                  <div class="live-round-meta">
+                    <p class="section-kicker">Live round</p>
+                    <button
+                      class="sound-toggle-button"
+                      id="soundToggleBtn"
+                      type="button"
+                      aria-pressed="true"
+                      aria-label="Toggle sound"
+                    >
+                      <span class="sound-toggle-label">Sound</span>
+                      <span class="sound-toggle-switch" aria-hidden="true">
+                        <span class="sound-toggle-knob"></span>
+                      </span>
+                    </button>
+                  </div>
                   <h2 id="questionNumberLabel">Question 1</h2>
                 </div>
                 <button class="ghost-button" id="resetGameBtn" type="button">
@@ -174,16 +178,16 @@
 
               <div class="controls-grid">
                 <button class="primary-button" id="correctBtn" type="button">
-                  Mark correct
+                  Correct
                 </button>
                 <button class="secondary-button" id="incorrectBtn" type="button">
-                  Mark incorrect
+                  Wrong
                 </button>
                 <button class="ghost-button" id="passBtn" type="button">
-                  Team passed
+                  Pass
                 </button>
                 <button class="ghost-button" id="revealHintBtn" type="button">
-                  Reveal hint now
+                  Hint
                 </button>
                 <button class="primary-button hidden" id="nextQuestionBtn" type="button">
                   Next question
@@ -239,6 +243,7 @@
       </article>
     </template>
 
+    <script src="./sounds/sound-manifest.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>

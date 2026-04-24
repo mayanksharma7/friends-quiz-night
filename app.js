@@ -35,6 +35,7 @@ const elements = {
   passBtn: document.querySelector("#passBtn"),
   revealHintBtn: document.querySelector("#revealHintBtn"),
   nextQuestionBtn: document.querySelector("#nextQuestionBtn"),
+  soundToggleBtn: document.querySelector("#soundToggleBtn"),
   quizFileInput: document.querySelector("#quizFileInput"),
   loadFileBtn: document.querySelector("#loadFileBtn"),
   clearQuestionsBtn: document.querySelector("#clearQuestionsBtn"),
@@ -48,11 +49,23 @@ const state = {
     teamSize: 2,
     loadedQuizName: "",
   },
+  settings: {
+    soundEnabled: true,
+  },
   teams: [],
   questions: [],
   logs: [],
   game: null,
 };
+
+const soundLibrary = Object.fromEntries(
+  Object.entries(window.__QUIZ_SOUND_MANIFEST__ || {}).map(([category, sounds]) => [
+    category,
+    Array.isArray(sounds) ? sounds : [],
+  ])
+);
+
+let activeAudio = null;
 
 function saveState() {
   localStorage.setItem(
@@ -60,6 +73,7 @@ function saveState() {
     JSON.stringify({
       stage: state.stage,
       draft: state.draft,
+      settings: state.settings,
       teams: state.teams,
       questions: state.questions,
       logs: state.logs,
@@ -83,6 +97,9 @@ function loadState() {
       teamSize: parsed.draft?.teamSize || 2,
       loadedQuizName: parsed.draft?.loadedQuizName || "",
     };
+    state.settings = {
+      soundEnabled: parsed.settings?.soundEnabled ?? true,
+    };
     state.teams = parsed.teams || [];
     state.questions = parsed.questions || [];
     state.logs = parsed.logs || [];
@@ -103,6 +120,53 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
+}
+
+function chooseRandomItem(items) {
+  return items[Math.floor(Math.random() * items.length)];
+}
+
+function playRandomSound(type) {
+  if (!state.settings.soundEnabled) {
+    return;
+  }
+
+  const soundOptions = soundLibrary[type] || [];
+
+  if (!soundOptions.length) {
+    return;
+  }
+
+  const soundPath = chooseRandomItem(soundOptions);
+
+  if (activeAudio) {
+    activeAudio.pause();
+    activeAudio.currentTime = 0;
+  }
+
+  activeAudio = new Audio(soundPath);
+  activeAudio.play().catch((error) => {
+    console.warn(`Could not play ${type} sound`, error);
+  });
+}
+
+function setSoundEnabled(isEnabled) {
+  state.settings.soundEnabled = Boolean(isEnabled);
+
+  if (!state.settings.soundEnabled && activeAudio) {
+    activeAudio.pause();
+    activeAudio.currentTime = 0;
+  }
+
+  saveState();
+
+  if (state.stage === "game") {
+    renderGameBoard();
+  }
+}
+
+function toggleSound() {
+  setSoundEnabled(!state.settings.soundEnabled);
 }
 
 function shuffle(items) {
@@ -391,6 +455,15 @@ function scrollGameIntoView(smooth = false) {
   });
 }
 
+function scrollWinnerIntoView() {
+  const topTarget = Math.max((elements.winnerBanner?.offsetTop || elements.gamePanel?.offsetTop || 0) - 12, 0);
+
+  window.scrollTo({
+    top: topTarget,
+    behavior: "auto",
+  });
+}
+
 function getWinningTeams() {
   if (!state.teams.length) {
     return [];
@@ -429,6 +502,7 @@ function startGame() {
   state.logs = [];
   state.stage = "game";
   initializeGame();
+  playRandomSound("start");
   logEvent(`Quiz started. ${state.teams[state.game.currentTeamIndex].name} begins.`);
   render();
   requestAnimationFrame(() => scrollGameIntoView());
@@ -443,8 +517,10 @@ function advanceTurn(reason) {
   state.game.attemptsInRound += 1;
 
   if (reason === "pass") {
+    playRandomSound("pass");
     logEvent(`${activeTeam.name} passed. Next team plays for ${state.game.pointsInPlay + 1} points.`);
   } else if (reason === "incorrect") {
+    playRandomSound("wrong");
     logEvent(`${activeTeam.name} answered incorrectly.`);
   }
 
@@ -455,6 +531,7 @@ function advanceTurn(reason) {
       state.game.pointsInPlay = 5;
       state.game.hintVisible = true;
       state.game.currentTeamIndex = state.game.questionStartTeamIndex;
+      playRandomSound("hint");
       logEvent("No correct answer in round 1. Hint revealed and round 2 starts at 5 points.");
       render();
       saveState();
@@ -476,6 +553,7 @@ function advanceTurn(reason) {
 
 function markCorrect() {
   const activeTeam = state.teams[state.game.currentTeamIndex];
+  playRandomSound("correct");
   activeTeam.score += state.game.pointsInPlay;
   state.game.answerVisible = true;
   state.game.questionFinished = true;
@@ -490,6 +568,7 @@ function finishQuestion(endingTeamIndex) {
     logEvent("Quiz finished.");
     render();
     saveState();
+    requestAnimationFrame(() => scrollWinnerIntoView());
     return;
   }
 
@@ -503,6 +582,7 @@ function advanceToNextQuestion() {
     return;
   }
 
+  playRandomSound("next");
   const startingTeam = state.teams[state.game.nextQuestionStartTeamIndex];
   const nextQuestionNumber = state.game.questionIndex + 2;
   state.game.questionIndex += 1;
@@ -531,6 +611,7 @@ function revealHintNow() {
   state.game.pointsInPlay = 5;
   state.game.attemptsInRound = 0;
   state.game.currentTeamIndex = state.game.questionStartTeamIndex;
+  playRandomSound("hint");
   logEvent("Quizmaster revealed the hint early. Round 2 begins at 5 points.");
   render();
   saveState();
@@ -656,6 +737,10 @@ function renderGameBoard() {
     : waitingForNext
       ? "Answer shown. Move on when everyone has seen it."
     : `${team.name} is up. Use the controls below to record the result.`;
+  elements.soundToggleBtn.setAttribute("aria-pressed", String(state.settings.soundEnabled));
+  elements.soundToggleBtn.classList.toggle("is-on", state.settings.soundEnabled);
+  elements.soundToggleBtn.classList.toggle("is-off", !state.settings.soundEnabled);
+  elements.soundToggleBtn.title = state.settings.soundEnabled ? "Sound is on" : "Sound is off";
 
   [elements.correctBtn, elements.incorrectBtn, elements.passBtn, elements.revealHintBtn].forEach(
     (button) => {
@@ -797,6 +882,7 @@ elements.incorrectBtn.addEventListener("click", () => advanceTurn("incorrect"));
 elements.passBtn.addEventListener("click", () => advanceTurn("pass"));
 elements.revealHintBtn.addEventListener("click", revealHintNow);
 elements.nextQuestionBtn.addEventListener("click", advanceToNextQuestion);
+elements.soundToggleBtn.addEventListener("click", toggleSound);
 elements.playerNames.addEventListener("input", persistSetupDraft);
 elements.teamSize.addEventListener("input", persistSetupDraft);
 elements.quizFileInput.addEventListener("change", () => {

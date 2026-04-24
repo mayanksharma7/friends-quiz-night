@@ -1,0 +1,8 @@
+{
+  "name": "friends-quiz-night",
+  "private": true,
+  "scripts": {
+    "sounds": "node ./scripts/generate-sound-manifest.mjs",
+    "check": "node --check app.js"
+  }
+}

@@ -26,6 +26,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Generate sound manifest
+        run: node ./scripts/generate-sound-manifest.mjs
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

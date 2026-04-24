@@ -1,185 +1,48 @@
 # Friends Quiz Night
 
-Friends Quiz Night is a single-screen quizmaster website for playing team quizzes with friends.
+Live site: [mayanksharma7.github.io/friends-quiz-night](https://mayanksharma7.github.io/friends-quiz-night/)
 
-One person, the quizmaster, runs the website for the whole room. The teams do not log in separately. The quizmaster shows the shared screen to everyone, controls question flow, records right and wrong answers, reveals hints, reveals answers, and moves the game to the next question.
+Friends Quiz Night is a browser-based quizmaster app for running a team quiz on one shared screen. One person controls the game, everyone else watches and answers in the room.
 
-This README is written for both:
-- humans who want to run or modify the game
-- AI tools such as GPT that may later help create quiz files, extend features, or update the codebase
+## What it does
 
-## Product summary
+- creates random teams from a list of player names
+- lets you rename teams before starting
+- loads quiz questions from a JSON file
+- runs the game round by round on one screen
+- keeps score and shows a live leaderboard
+- reveals hints and answers at the right time
+- plays event sounds for correct, wrong, pass, hint, next, and start
+- saves progress in the same browser so you can continue later
 
-This website is designed for a live social quiz where:
-- players are split into teams
-- each team gets a turn to answer
-- questions can be passed to the next team
-- the points value changes as the question moves around
-- a second round with a hint is possible
-- the answer is shown before the quizmaster moves on
-- the leaderboard updates live
+## How the game works
 
-The app is fully client-side and runs in the browser.
+1. Enter player names.
+2. Choose how many players should be in each team.
+3. Shuffle teams.
+4. Load a quiz file.
+5. Start the quiz.
 
-## Core concept
+For each question:
 
-The game is not a buzzer quiz and not a multi-user login system.
+- the app picks a starting team
+- round 1 starts at `10` points
+- if a team gets it right, they get the current points
+- if they get it wrong or pass, the next team gets a turn and the points go up by `1`
+- if nobody gets it in round 1, the hint is shown
+- round 2 starts at `5` points and follows the same rotation
+- if nobody gets it in round 2, the answer is shown and no points are awarded
+- the next question starts with the team after the one where the last question ended
 
-It is a quizmaster-led rotation game:
-- the quizmaster loads a quiz file
-- enters player names
-- chooses how many players should be in each team
-- the app shuffles teams
-- the quizmaster runs each question live using the on-screen controls
+When the quiz ends, the app shows the winning team on screen. If there is a tie, it shows a shared win.
 
-## Game rules
+## Running locally
 
-These are the intended rules implemented by the website.
-
-### Team setup
-
-- The quizmaster enters player names.
-- The quizmaster chooses how many players should be in each team.
-- The app randomly shuffles players into teams.
-- The quizmaster can rename the teams before the game starts.
-
-### Starting the quiz
-
-- The app chooses a random starting team for the first question.
-- A question appears on screen.
-- The current team attempts the question first.
-
-### Scoring: round 1
-
-- Round 1 starts at `10` points.
-- If the current team answers correctly, they get the current points value.
-- If they answer incorrectly, they get `0` and the question moves to the next team.
-- If they pass, they also get `0` and the question moves to the next team.
-- Each time the question moves to the next team, the points in play increase by `1`.
-
-Example:
-- Team A starts on 10
-- if they pass or get it wrong, Team B gets a chance for 11
-- then Team C for 12
-- and so on
-
-### Hint round: round 2
-
-- If all teams fail to answer correctly in round 1, the app reveals a hint.
-- Round 2 then begins.
-- Round 2 starts at `5` points.
-- The question returns to the starting team for that question.
-- The same rotation logic happens again.
-- Each move to the next team increases the points in play by `1` during round 2 as well.
-
-### If nobody gets the question
-
-- If all teams fail again in round 2, nobody gets points.
-- The correct answer is revealed on screen.
-- The app does not move immediately to the next question.
-- The quizmaster must click `Next question` so everyone can first see the answer.
-
-### If somebody gets the question right
-
-- The correct answer is shown on screen.
-- The app pauses on that question so the room can see the answer.
-- The quizmaster clicks `Next question` to continue.
-
-### Who starts the next question
-
-- The next question starts with the team after the team where the previous question ended.
-
-In practice:
-- if a team answers correctly, the next team after them starts the following question
-- if no team gets it and the last attempt was by Team D, then Team A starts the next question
-
-### End of quiz
-
-- When the last question is completed, the app shows a winner celebration banner.
-- If there is a tie, the app announces a shared win.
-- The leaderboard remains visible as the final result.
-
-## Current website features
-
-- Random team generation from a player list
-- Team renaming before the game starts
-- Load quiz files directly from the browser file picker
-- Edit the loaded question bank manually before starting
-- Live quizmaster controls:
-  - mark correct
-  - mark wrong
-  - mark pass
-  - reveal hint
-  - move to next question after answer reveal
-- Live leaderboard
-- Turn tracker showing the current team
-- Winner celebration banner at the end
-- Keyboard shortcuts for the quizmaster
-- Automatic local progress saving in the browser
-
-## Keyboard shortcuts
-
-These work during the live game when the quizmaster is not typing in an input field.
-
-- `C`: mark correct
-- `W`: mark wrong
-- `P`: pass
-- `H`: reveal hint
-- `N`: next question after the answer is shown
-
-## Save and resume behavior
-
-The app saves progress in browser `localStorage`.
-
-That means:
-- if the quiz is not finished, it can usually be resumed later
-- this works on the same browser on the same device
-- it does not automatically sync across devices
-- if browser storage is cleared, the saved game is lost
-- if `Reset game` is used, the saved game is cleared
-
-Important limitation:
-- this is not yet a cloud-synced multiplayer system
-- hosting the website online does not automatically make saved progress shared across devices
-
-## How to run
-
-Open [index.html](./index.html) in any modern browser.
-
-## GitHub Pages hosting
-
-This repo is set up with a GitHub Actions workflow for GitHub Pages deployment:
-- [.github/workflows/deploy-pages.yml](./.github/workflows/deploy-pages.yml)
-
-Live site:
-- [https://mayanksharma7.github.io/friends-quiz-night/](https://mayanksharma7.github.io/friends-quiz-night/)
-
-If GitHub Pages ever needs to be re-enabled:
-1. Push this repository to GitHub.
-2. Open the repository on GitHub.
-3. Go to `Settings` -> `Pages`.
-4. Under the build and deployment source, choose `GitHub Actions`.
-5. Push to `main` again if needed, or run the workflow manually from the `Actions` tab.
-
-After that, every push to `main` should redeploy the site automatically.
-
-## How to use
-
-1. Open the website.
-2. Enter player names, one per line.
-3. Choose players per team.
-4. Click `Shuffle teams`.
-5. Optionally rename teams.
-6. Load a quiz `.json` file.
-7. Optionally edit the loaded questions.
-8. Click `Start quiz`.
-9. Run the game using the live controls.
+Open [index.html](./index.html) in a browser.
 
 ## Quiz file format
 
-Each quiz lives in a JSON file.
-
-The website expects this structure:
+Quiz files are plain JSON. Example:
 
 ```json
 {
@@ -196,88 +59,68 @@ The website expects this structure:
 }
 ```
 
-### Required rules for quiz files
+Rules:
 
-- Root object must contain:
-  - `id`
-  - `title`
-  - `description`
-  - `questions`
+- `id`, `title`, `description`, and `questions` are required
 - `questions` must be an array
-- each question object should contain:
-  - `prompt`
-  - `hint`
-  - `answer`
-- every question must have a non-empty `prompt`
-- every question must have a non-empty `answer`
-- hints may be short, direct, and useful
+- each question should have `prompt`, `hint`, and `answer`
+- `prompt` and `answer` should not be empty
 
-## Sample quiz packs
+Sample files are in [question-packs](./question-packs).
 
-Sample quiz files are in [question-packs](./question-packs).
+## Sounds
 
-Included examples:
-- `question-packs/capitals-of-countries.json`
-- `question-packs/cricket-in-india.json`
-- `question-packs/famous-places-of-india.json`
-- `question-packs/general-knowledge-night.json`
-- `question-packs/india-history-and-freedom-movement.json`
-- `question-packs/india-states-and-capitals.json`
-- `question-packs/indian-cinema-and-bollywood.json`
-- `question-packs/indian-food-festivals-and-culture.json`
-- `question-packs/template.quiz.json`
+Sounds are grouped by folder inside [sounds](./sounds):
 
-## GPT / AI authoring guidance
+- `start`
+- `correct`
+- `wrong`
+- `pass`
+- `hint`
+- `next`
 
-If GPT or another AI is asked to create a new quiz file for this website, it should follow these rules:
+If you add, remove, or rename sound files, regenerate the sound manifest:
 
-- return valid JSON only when generating a quiz file
-- use the exact root keys:
-  - `id`
-  - `title`
-  - `description`
-  - `questions`
-- make `id` lowercase and hyphen-separated
-- keep all questions fact-based and unambiguous
-- avoid duplicate questions
-- keep hints short and helpful
-- keep answers concise
-- if a specific count is requested, return exactly that many questions
-- prefer stable facts unless the user explicitly asks for current affairs
-- for India-focused quizzes, prefer Indian English spelling and familiar context
+```bash
+npm run sounds
+```
 
-Reusable prompt template for GPT:
-- [question-packs/TEMPLATE_PROMPT.md](./question-packs/TEMPLATE_PROMPT.md)
+If `npm` is not available, use:
 
-Reusable JSON skeleton:
-- [question-packs/template.quiz.json](./question-packs/template.quiz.json)
+```bash
+node ./scripts/generate-sound-manifest.mjs
+```
 
-## AI context for future changes
+This updates [sounds/sound-manifest.js](./sounds/sound-manifest.js).
 
-If an AI assistant is updating this project later, these points matter:
+## Save and resume
 
-- This is a browser-only app.
-- It does not require a backend to function.
-- It is designed for one quizmaster and a shared display.
-- Teams do not have individual accounts.
-- Quiz packs are loaded from JSON files chosen by the quizmaster.
-- Progress is currently stored in browser `localStorage`.
-- The game intentionally pauses after showing the correct answer.
-- The quizmaster must explicitly move to the next question.
-- India-focused quiz content is a major use case.
+Game progress is saved in browser `localStorage`.
 
-## Main project files
+That means:
 
-- [index.html](./index.html): main app markup
-- [styles.css](./styles.css): visual design and layout
-- [app.js](./app.js): quiz logic, UI state, persistence, shortcuts
-- [question-packs](./question-packs): sample and template quiz JSON files
+- you can resume later in the same browser on the same device
+- progress does not sync automatically across devices
+- using `Reset game` clears the saved session
 
-## Good next improvements
+## Keyboard shortcuts
 
-Potential future upgrades:
-- export and import saved game state to a file
-- optional cloud save for cross-device resume
-- projector mode with larger text
-- per-question countdown timer
-- optional tie-breaker round generation
+During the live game:
+
+- `C` for correct
+- `W` for wrong
+- `P` for pass
+- `H` for hint
+- `N` for next question
+
+## GitHub Pages
+
+This repo includes a GitHub Pages workflow at [.github/workflows/deploy-pages.yml](./.github/workflows/deploy-pages.yml).
+
+If Pages needs to be enabled again:
+
+1. Open the repository on GitHub.
+2. Go to `Settings` -> `Pages`.
+3. Set the source to `GitHub Actions`.
+
+After that, pushes to `main` should deploy the site automatically.
