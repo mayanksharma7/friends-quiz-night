@@ -130,9 +130,10 @@ select:focus {
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 5vw, 4.4rem);
+  font-size: clamp(2.35rem, 5vw, 4.4rem);
   line-height: 0.98;
-  max-width: 9ch;
+  max-width: min(100%, 15ch);
+  text-wrap: balance;
 }
 
 .hero-copy-block {
