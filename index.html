@@ -189,6 +189,12 @@
                 <button class="ghost-button" id="revealHintBtn" type="button">
                   Hint
                 </button>
+                <button class="ghost-button hidden" id="previousQuestionBtn" type="button">
+                  Previous question
+                </button>
+                <button class="ghost-button hidden" id="reviewNextQuestionBtn" type="button">
+                  Next review
+                </button>
                 <button class="primary-button hidden" id="nextQuestionBtn" type="button">
                   Next question
                 </button>
@@ -199,6 +205,7 @@
                 <span>`W` wrong</span>
                 <span>`P` pass</span>
                 <span>`H` hint</span>
+                <span>`B` previous</span>
                 <span>`N` next</span>
               </p>
 
@@ -211,11 +218,6 @@
               <article class="card">
                 <h3>Leaderboard</h3>
                 <div id="leaderboard" class="leaderboard"></div>
-              </article>
-
-              <article class="card">
-                <h3>Round tracker</h3>
-                <div id="turnOrder" class="turn-order"></div>
               </article>
 
               <article class="card">

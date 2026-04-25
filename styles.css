@@ -89,7 +89,6 @@ select:focus {
 .question-editor,
 .team-chip,
 .leaderboard-row,
-.turn-chip,
 .event-item,
 .score-ribbon,
 .question-card {
@@ -284,7 +283,6 @@ select:focus {
 .card-header,
 .question-editor-head,
 .leaderboard-row,
-.turn-chip,
 .event-item {
   display: flex;
   justify-content: space-between;
@@ -375,7 +373,6 @@ select:focus {
 .team-preview,
 .question-list,
 .leaderboard,
-.turn-order,
 .event-log {
   display: grid;
   gap: 0.9rem;
@@ -612,7 +609,6 @@ select:focus {
 }
 
 .leaderboard-row:hover,
-.turn-chip:hover,
 .event-item:hover {
   transform: translateY(-1px);
   border-color: rgba(138, 180, 248, 0.2);
@@ -629,8 +625,6 @@ select:focus {
 
 .leaderboard-row strong,
 .leaderboard-row span,
-.turn-chip strong,
-.turn-chip small,
 .event-item p {
   overflow-wrap: anywhere;
 }
@@ -676,33 +670,17 @@ select:focus {
   color: var(--gold);
 }
 
-.turn-chip {
-  padding: 1rem 1.05rem;
-  border-radius: 18px;
-  border: 1px solid rgba(154, 160, 166, 0.1);
-  background: rgba(32, 33, 36, 0.95);
-  position: relative;
-  overflow: hidden;
+.leaderboard-meta {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.2rem;
 }
 
-.turn-chip.active {
-  border-color: rgba(138, 180, 248, 0.34);
-  background:
-    linear-gradient(135deg, rgba(35, 44, 56, 0.98), rgba(28, 31, 37, 0.96));
-  box-shadow: 0 16px 36px rgba(138, 180, 248, 0.1);
-}
-
-.turn-chip-main {
-  display: grid;
-  gap: 0.3rem;
-  min-width: 0;
-}
-
-.turn-badge {
+.leaderboard-badge {
   display: inline-flex;
   width: fit-content;
-  margin-top: 0.25rem;
   padding: 0.28rem 0.6rem;
   border-radius: 999px;
   background: rgba(138, 180, 248, 0.14);
@@ -711,10 +689,6 @@ select:focus {
   font-size: 0.66rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-}
-
-.turn-score {
-  white-space: nowrap;
 }
 
 .game-mode .page-shell {
@@ -821,10 +795,6 @@ select:focus {
   font-size: 1.55rem;
 }
 
-.game-mode .turn-chip {
-  padding: 1rem;
-}
-
 .game-mode .event-log {
   max-height: 320px;
   overflow: auto;
@@ -840,19 +810,6 @@ select:focus {
   border-radius: 999px;
 }
 
-.turn-chip.leader {
-  border-color: rgba(255, 211, 110, 0.28);
-}
-
-.turn-chip.leader strong:last-child {
-  color: var(--gold);
-}
-
-.turn-chip.completed {
-  opacity: 0.6;
-}
-
-.turn-chip small,
 .event-item small,
 .question-editor-head .remove-link {
   color: var(--muted);

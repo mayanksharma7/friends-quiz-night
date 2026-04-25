@@ -24,7 +24,6 @@ const elements = {
   winnerTitle: document.querySelector("#winnerTitle"),
   winnerSubtitle: document.querySelector("#winnerSubtitle"),
   leaderboard: document.querySelector("#leaderboard"),
-  turnOrder: document.querySelector("#turnOrder"),
   eventLog: document.querySelector("#eventLog"),
   generateTeamsBtn: document.querySelector("#generateTeamsBtn"),
   addQuestionBtn: document.querySelector("#addQuestionBtn"),
@@ -34,6 +33,8 @@ const elements = {
   incorrectBtn: document.querySelector("#incorrectBtn"),
   passBtn: document.querySelector("#passBtn"),
   revealHintBtn: document.querySelector("#revealHintBtn"),
+  previousQuestionBtn: document.querySelector("#previousQuestionBtn"),
+  reviewNextQuestionBtn: document.querySelector("#reviewNextQuestionBtn"),
   nextQuestionBtn: document.querySelector("#nextQuestionBtn"),
   soundToggleBtn: document.querySelector("#soundToggleBtn"),
   quizSourceSelect: document.querySelector("#quizSourceSelect"),
@@ -528,7 +529,6 @@ function renderTeamPreview() {
       state.teams[index].name = event.target.value.trim() || seededTeamName(index);
       persistSetupDraft();
       renderLeaderboard();
-      renderTurnOrder();
     });
 
     elements.teamPreview.appendChild(card);
@@ -575,11 +575,17 @@ function initializeGame() {
     answerVisible: false,
     questionFinished: false,
     awaitingNextQuestion: false,
+    reviewQuestionIndex: null,
+    completedQuestions: [],
   };
 }
 
+function getDisplayQuestionIndex() {
+  return state.game.reviewQuestionIndex ?? state.game.questionIndex;
+}
+
 function currentQuestion() {
-  return state.questions[state.game.questionIndex];
+  return state.questions[getDisplayQuestionIndex()];
 }
 
 function hasMoreQuestions() {
@@ -588,6 +594,46 @@ function hasMoreQuestions() {
 
 function isQuizComplete() {
   return Boolean(state.logs[0] && state.logs[0].message === "Quiz finished.");
+}
+
+function isReviewingQuestion() {
+  return state.game?.reviewQuestionIndex !== null && state.game?.reviewQuestionIndex !== undefined;
+}
+
+function getCompletedQuestion(questionIndex) {
+  return (state.game?.completedQuestions || []).find(
+    (entry) => entry.questionIndex === questionIndex
+  );
+}
+
+function getScoreSnapshotValue(team, scoreSnapshot) {
+  if (!scoreSnapshot || scoreSnapshot[team.id] === undefined) {
+    return team.score;
+  }
+
+  return scoreSnapshot[team.id];
+}
+
+function ensureGameReviewState() {
+  if (!state.game) {
+    return;
+  }
+
+  if (!Array.isArray(state.game.completedQuestions)) {
+    state.game.completedQuestions = [];
+  }
+
+  if (state.game.reviewQuestionIndex === undefined) {
+    state.game.reviewQuestionIndex = null;
+  }
+
+  if (
+    state.game.reviewQuestionIndex !== null &&
+    (!getCompletedQuestion(state.game.reviewQuestionIndex) ||
+      state.game.reviewQuestionIndex >= state.game.questionIndex)
+  ) {
+    state.game.reviewQuestionIndex = null;
+  }
 }
 
 function scrollGameIntoView(smooth = false) {
@@ -657,6 +703,10 @@ function nextTeamIndex(index) {
 }
 
 function advanceTurn(reason) {
+  if (isReviewingQuestion()) {
+    return;
+  }
+
   const activeTeam = state.teams[state.game.currentTeamIndex];
   state.game.attemptsInRound += 1;
 
@@ -685,7 +735,11 @@ function advanceTurn(reason) {
     state.game.answerVisible = true;
     state.game.questionFinished = true;
     logEvent(`No team solved it. Answer: ${currentQuestion().answer}.`);
-    finishQuestion(state.game.currentTeamIndex);
+    finishQuestion(state.game.currentTeamIndex, {
+      type: "unsolved",
+      round: state.game.round,
+      pointsAwarded: 0,
+    });
     return;
   }
 
@@ -696,16 +750,55 @@ function advanceTurn(reason) {
 }
 
 function markCorrect() {
+  if (isReviewingQuestion()) {
+    return;
+  }
+
   const activeTeam = state.teams[state.game.currentTeamIndex];
   playRandomSound("correct");
   activeTeam.score += state.game.pointsInPlay;
   state.game.answerVisible = true;
   state.game.questionFinished = true;
   logEvent(`${activeTeam.name} answered correctly and earned ${state.game.pointsInPlay} points.`);
-  finishQuestion(state.game.currentTeamIndex);
+  finishQuestion(state.game.currentTeamIndex, {
+    type: "correct",
+    awardedTeamId: activeTeam.id,
+    awardedTeamName: activeTeam.name,
+    round: state.game.round,
+    pointsAwarded: state.game.pointsInPlay,
+  });
 }
 
-function finishQuestion(endingTeamIndex) {
+function recordCompletedQuestion(outcome) {
+  const questionIndex = state.game.questionIndex;
+  const question = state.questions[questionIndex];
+  const completedQuestion = {
+    questionIndex,
+    prompt: question.prompt,
+    answer: question.answer,
+    hint: question.hint || "",
+    type: outcome.type,
+    awardedTeamId: outcome.awardedTeamId || "",
+    awardedTeamName: outcome.awardedTeamName || "",
+    round: outcome.round,
+    pointsAwarded: outcome.pointsAwarded || 0,
+    hintWasVisible: state.game.hintVisible,
+    scoreSnapshot: Object.fromEntries(state.teams.map((team) => [team.id, team.score])),
+  };
+  const existingIndex = state.game.completedQuestions.findIndex(
+    (entry) => entry.questionIndex === questionIndex
+  );
+
+  if (existingIndex >= 0) {
+    state.game.completedQuestions[existingIndex] = completedQuestion;
+    return;
+  }
+
+  state.game.completedQuestions.push(completedQuestion);
+}
+
+function finishQuestion(endingTeamIndex, outcome) {
+  recordCompletedQuestion(outcome);
   state.game.nextQuestionStartTeamIndex = nextTeamIndex(endingTeamIndex);
 
   if (state.game.questionIndex >= state.questions.length - 1) {
@@ -726,6 +819,7 @@ function advanceToNextQuestion() {
     return;
   }
 
+  state.game.reviewQuestionIndex = null;
   playRandomSound("next");
   const startingTeam = state.teams[state.game.nextQuestionStartTeamIndex];
   const nextQuestionNumber = state.game.questionIndex + 2;
@@ -746,7 +840,7 @@ function advanceToNextQuestion() {
 }
 
 function revealHintNow() {
-  if (state.game.hintVisible) {
+  if (isReviewingQuestion() || state.game.hintVisible) {
     return;
   }
 
@@ -759,6 +853,45 @@ function revealHintNow() {
   logEvent("Quizmaster revealed the hint early. Round 2 begins at 5 points.");
   render();
   saveState();
+}
+
+function canReviewQuestion(questionIndex) {
+  return Boolean(getCompletedQuestion(questionIndex));
+}
+
+function goToPreviousQuestion() {
+  if (!state.game) {
+    return;
+  }
+
+  const targetIndex = getDisplayQuestionIndex() - 1;
+
+  if (!canReviewQuestion(targetIndex)) {
+    return;
+  }
+
+  state.game.reviewQuestionIndex = targetIndex;
+  render();
+  saveState();
+  requestAnimationFrame(() => scrollGameIntoView(true));
+}
+
+function goToNextReviewedQuestion() {
+  if (!isReviewingQuestion()) {
+    return;
+  }
+
+  const targetIndex = state.game.reviewQuestionIndex + 1;
+
+  if (targetIndex >= state.game.questionIndex) {
+    state.game.reviewQuestionIndex = null;
+  } else if (canReviewQuestion(targetIndex)) {
+    state.game.reviewQuestionIndex = targetIndex;
+  }
+
+  render();
+  saveState();
+  requestAnimationFrame(() => scrollGameIntoView(true));
 }
 
 function resetGame() {
@@ -785,9 +918,22 @@ function resetGame() {
 
 function renderLeaderboard() {
   elements.leaderboard.innerHTML = "";
-  const rankedTeams = [...state.teams].sort((left, right) => right.score - left.score);
-  const activeTeamId = state.stage === "game" && state.game ? state.teams[state.game.currentTeamIndex]?.id : null;
-  const topScore = rankedTeams.length ? rankedTeams[0].score : null;
+  const reviewResult = isReviewingQuestion()
+    ? getCompletedQuestion(state.game.reviewQuestionIndex)
+    : null;
+  const rankedTeams = [...state.teams].sort(
+    (left, right) =>
+      getScoreSnapshotValue(right, reviewResult?.scoreSnapshot) -
+      getScoreSnapshotValue(left, reviewResult?.scoreSnapshot)
+  );
+  const activeTeamId = reviewResult
+    ? reviewResult.awardedTeamId || null
+    : state.stage === "game" && state.game
+      ? state.teams[state.game.currentTeamIndex]?.id
+      : null;
+  const topScore = rankedTeams.length
+    ? getScoreSnapshotValue(rankedTeams[0], reviewResult?.scoreSnapshot)
+    : null;
 
   if (!rankedTeams.length) {
     elements.leaderboard.innerHTML = '<p class="status-text">Teams will appear here.</p>';
@@ -796,46 +942,23 @@ function renderLeaderboard() {
 
   rankedTeams.forEach((team, index) => {
     const row = document.createElement("article");
-    const isTopper = topScore !== null && team.score === topScore && topScore > 0;
+    const teamScore = getScoreSnapshotValue(team, reviewResult?.scoreSnapshot);
+    const isTopper = topScore !== null && teamScore === topScore && topScore > 0;
     const isCurrent = activeTeamId === team.id;
+    const statusBadge = isCurrent ? (reviewResult ? "Scored" : "Now Playing") : "";
     row.className = `leaderboard-row${isTopper ? " topper" : ""}${isCurrent ? " current-team" : ""}`;
     row.innerHTML = `
       <div>
-        <span>${isTopper ? "Leader" : `#${index + 1}`}</span>
+        <div class="leaderboard-meta">
+          <span>${isTopper ? "Leader" : `#${index + 1}`}</span>
+          ${statusBadge ? `<span class="leaderboard-badge">${statusBadge}</span>` : ""}
+        </div>
         <strong>${escapeHtml(team.name)}</strong>
         <span>${escapeHtml(team.players.join(", "))}</span>
       </div>
-      <div class="leaderboard-score">${team.score}</div>
+      <div class="leaderboard-score">${teamScore}</div>
     `;
     elements.leaderboard.appendChild(row);
-  });
-}
-
-function renderTurnOrder() {
-  elements.turnOrder.innerHTML = "";
-
-  if (!state.teams.length) {
-    elements.turnOrder.innerHTML = '<p class="status-text">Turn order will appear here.</p>';
-    return;
-  }
-
-  const leaderScore = Math.max(...state.teams.map((entry) => entry.score));
-
-  state.teams.forEach((team, index) => {
-    const chip = document.createElement("article");
-    const isActive = state.stage === "game" && state.game && index === state.game.currentTeamIndex;
-    const isLeader = team.score === leaderScore && team.score > 0;
-
-    chip.className = `turn-chip${isActive ? " active" : ""}${isLeader ? " leader" : ""}`;
-    chip.innerHTML = `
-      <div class="turn-chip-main">
-        <strong>${escapeHtml(team.name)}</strong>
-        <small>${team.players.length} player${team.players.length === 1 ? "" : "s"}</small>
-        ${isActive ? '<span class="turn-badge">Now Playing</span>' : ""}
-      </div>
-      <strong class="turn-score">${team.score} pts</strong>
-    `;
-    elements.turnOrder.appendChild(chip);
   });
 }
 
@@ -863,21 +986,32 @@ function renderGameBoard() {
     return;
   }
 
+  ensureGameReviewState();
+  const displayQuestionIndex = getDisplayQuestionIndex();
   const team = state.teams[state.game.currentTeamIndex];
   const question = currentQuestion();
   const quizComplete = isQuizComplete();
   const waitingForNext = Boolean(state.game.awaitingNextQuestion);
+  const reviewing = isReviewingQuestion();
+  const reviewResult = reviewing ? getCompletedQuestion(displayQuestionIndex) : null;
+  const reviewSummary = reviewResult?.type === "correct"
+    ? `${reviewResult.awardedTeamName} got this right in round ${reviewResult.round} for ${reviewResult.pointsAwarded} points.`
+    : "No team solved this question. The answer is shown for review.";
 
-  elements.questionNumberLabel.textContent = `Question ${state.game.questionIndex + 1} of ${state.questions.length}`;
-  elements.currentTeamName.textContent = team.name;
-  elements.roundLabel.textContent = String(state.game.round);
-  elements.pointsInPlay.textContent = String(state.game.pointsInPlay);
+  elements.questionNumberLabel.textContent = `Question ${displayQuestionIndex + 1} of ${state.questions.length}${reviewing ? " - review" : ""}`;
+  elements.currentTeamName.textContent = reviewing ? "Review mode" : team.name;
+  elements.roundLabel.textContent = reviewing ? String(reviewResult?.round || "-") : String(state.game.round);
+  elements.pointsInPlay.textContent = reviewing
+    ? String(reviewResult?.pointsAwarded || 0)
+    : String(state.game.pointsInPlay);
   elements.questionPrompt.textContent = question.prompt;
   elements.questionHint.textContent = question.hint || "No hint added.";
   elements.questionAnswer.textContent = question.answer;
-  elements.hintBox.classList.toggle("hidden", !state.game.hintVisible);
-  elements.answerBox.classList.toggle("hidden", !state.game.answerVisible);
-  elements.turnMessage.textContent = quizComplete
+  elements.hintBox.classList.toggle("hidden", reviewing ? !question.hint : !state.game.hintVisible);
+  elements.answerBox.classList.toggle("hidden", reviewing ? false : !state.game.answerVisible);
+  elements.turnMessage.textContent = reviewing
+    ? reviewSummary
+    : quizComplete
     ? "Quiz complete. Celebration mode is on and the final leaderboard is locked."
     : waitingForNext
       ? "Answer shown. Move on when everyone has seen it."
@@ -889,11 +1023,19 @@ function renderGameBoard() {
 
   [elements.correctBtn, elements.incorrectBtn, elements.passBtn, elements.revealHintBtn].forEach(
     (button) => {
-      button.disabled = quizComplete || waitingForNext;
+      button.disabled = reviewing || quizComplete || waitingForNext;
     }
   );
-  elements.nextQuestionBtn.classList.toggle("hidden", !waitingForNext);
-  elements.nextQuestionBtn.disabled = quizComplete || !waitingForNext;
+  elements.previousQuestionBtn.classList.toggle("hidden", false);
+  elements.previousQuestionBtn.disabled = !canReviewQuestion(displayQuestionIndex - 1);
+  elements.reviewNextQuestionBtn.classList.toggle("hidden", !reviewing);
+  elements.reviewNextQuestionBtn.disabled = !reviewing;
+  elements.reviewNextQuestionBtn.textContent =
+    reviewing && state.game.reviewQuestionIndex + 1 >= state.game.questionIndex
+      ? "Return to live"
+      : "Next review";
+  elements.nextQuestionBtn.classList.toggle("hidden", reviewing || !waitingForNext);
+  elements.nextQuestionBtn.disabled = quizComplete || reviewing || !waitingForNext;
 }
 
 function isTypingTarget(target) {
@@ -913,7 +1055,25 @@ function handleKeyboardShortcuts(event) {
 
   const quizComplete = isQuizComplete();
   const waitingForNext = Boolean(state.game.awaitingNextQuestion);
+  const reviewing = isReviewingQuestion();
   const key = event.key.toLowerCase();
+
+  if (reviewing) {
+    if (key === "n" || key === "arrowright") {
+      event.preventDefault();
+      goToNextReviewedQuestion();
+    } else if (key === "b" || key === "arrowleft") {
+      event.preventDefault();
+      goToPreviousQuestion();
+    }
+    return;
+  }
+
+  if (key === "b" || key === "arrowleft") {
+    event.preventDefault();
+    goToPreviousQuestion();
+    return;
+  }
 
   if (waitingForNext && key === "n") {
     event.preventDefault();
@@ -965,13 +1125,14 @@ function renderWinnerBanner() {
 function renderSetup() {
   renderTeamPreview();
   renderLeaderboard();
-  renderTurnOrder();
   renderLogs();
   updateFileStatus();
 }
 
 function render() {
   const inGame = state.stage === "game";
+
+  ensureGameReviewState();
 
   document.body.classList.toggle("game-mode", inGame);
   elements.setupPanel.classList.toggle("hidden", inGame);
@@ -981,7 +1142,6 @@ function render() {
   if (inGame) {
     renderWinnerBanner();
     renderLeaderboard();
-    renderTurnOrder();
     renderLogs();
     renderGameBoard();
   } else {
@@ -1008,7 +1168,6 @@ elements.generateTeamsBtn.addEventListener("click", () => {
   elements.setupMessage.textContent = `${state.teams.length} team${state.teams.length === 1 ? "" : "s"} created.`;
   renderTeamPreview();
   renderLeaderboard();
-  renderTurnOrder();
   saveState();
 });
 
@@ -1027,6 +1186,8 @@ elements.correctBtn.addEventListener("click", markCorrect);
 elements.incorrectBtn.addEventListener("click", () => advanceTurn("incorrect"));
 elements.passBtn.addEventListener("click", () => advanceTurn("pass"));
 elements.revealHintBtn.addEventListener("click", revealHintNow);
+elements.previousQuestionBtn.addEventListener("click", goToPreviousQuestion);
+elements.reviewNextQuestionBtn.addEventListener("click", goToNextReviewedQuestion);
 elements.nextQuestionBtn.addEventListener("click", advanceToNextQuestion);
 elements.soundToggleBtn.addEventListener("click", toggleSound);
 elements.playerNames.addEventListener("input", persistSetupDraft);
